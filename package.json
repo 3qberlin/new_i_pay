@@ -4,10 +4,10 @@
   "description": "Deploy JSON Server to Vercel",
   "main": "server.js",
   "scripts": {
-    "vite": "vite",
+    "node": "node server.js",
     "build": "vite build",
-    "deploy": "gh-pages -d dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d src/dist",
+    "vite": "vite"
   },
   "keywords": [],
   "author": "",
