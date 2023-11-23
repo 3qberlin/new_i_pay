@@ -1,8 +1,8 @@
 {
-  "name": "new_i_pay",
+  "name": "json-server-vercel",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Deploy JSON Server to Vercel",
+  "main": "server.js",
   "scripts": {
     "vite": "vite",
     "build": "vite build",
@@ -19,8 +19,9 @@
     "vite": "^5.0.2"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.2",
-    "vite-plugin-ejs": "^1.7.0"
+    "cors": "^2.8.5",
+    "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0"
   }
 }
