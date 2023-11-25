@@ -15,14 +15,278 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <link rel="stylesheet" crossorigin href="/new_i_pay/assets/index-23YY_HJC.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" crossorigin href="/new_i_pay/assets/index-ZRSu9q9G.css">
 </head>
 
 <body>
-header
+    <div class="container-lg py-md-8 position-relative">
+  <nav class="navbar navbar-expand-lg ms-n12 me-n12">
+    <a href="index.html" class="navbar-brand">
+      <h1 class="m-0">i-pay</h1>
+      <a href="#" class="d-block me-auto"><img src="../images/logo/Logo.png" alt="logo" class="my-lg-7 my-6" width="105"
+          height="29" /></a>
+    </a>
+    <button class="navbar-toggler me-12 p-8 border-0" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarContent" aria-controls="navbar controler" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="material-icons p-8 ms-auto">menu
+      </span>
+    </button>
+    <div class="collapse navbar-collapse w-100 z-3" id="navbarContent">
+      <ul class="navbar-nav d-flex align-items-center mb-2 mb-lg-0 justify-content-center w-100 autoHeight">
+        <li class="nav-item">
+          <a href="#" class="nav-link active hover p-lg-12 me-lg-12 navActive ">條件找陪玩</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="hover p-lg-12 mx-lg-12 text-mbBG">地圖找陪玩</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="hover p-lg-12 mx-lg-12">快速上手</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="hover p-lg-12 ms-lg-12">招募訊息</a>
+        </li>
+        <li class="nav-item d-block d-lg-none">
+          <a href="#" class="hover p-lg-12 ms-lg-12 d-flex align-items-center justify-content-center"><span
+              class="material-icons hover"> shopping_cart </span><span class="ms-8">購物車</span></a>
+        </li>
+        <li class="nav-item d-block d-lg-none">
+          <a href="#" class="hover p-lg-12 ms-lg-12 d-flex align-items-center justify-content-center"><span
+              class="material-icons hover"> person </span><span class="ms-8">個人主頁</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="headerIcons d-none d-lg-block me-12">
+      <div class="d-flex me-12">
+        <a href="#" class="mx-8">
+          <span class="material-icons hover p-8"> shopping_cart </span>
+        </a>
+        <a href="#" class="mx-8">
+          <span class="material-icons hover p-8"> person </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+<script>
+  const menuBtn = document.querySelector('.navbar button');
+  const menuBtnSpan = document.querySelector('.navbar button span');
+  console.log('menuBtn', menuBtn);
+  console.log('menuBtnSpan', menuBtnSpan.innerText);
+  menuBtn.addEventListener('click', function () {
+    if (menuBtnSpan.innerText === 'menu') {
+      menuBtnSpan.innerText = 'close'
+    } else if (menuBtnSpan.innerText === 'close')
+      menuBtnSpan.innerText = 'menu'
+  })
+</script>                <!-- web -->
+<div
+  id="carouselWeb"
+  class="carousel slide carousel-fade d-none d-lg-block"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-indicators mb-32">
+    <button
+      type="button"
+      data-bs-target="#carouselWeb"
+      data-bs-slide-to="0"
+      class="active border border-0 rounded-5 btn-carouselWeb"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselWeb"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+      class="border border-0 rounded-5 btn-carouselWeb ms-12 me-8"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselWeb"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+      class="border border-0 rounded-5 btn-carouselWeb ms-8 me-12"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselWeb"
+      data-bs-slide-to="3"
+      aria-label="Slide 4"
+      class="border border-0 rounded-5 btn-carouselWeb"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="3500">
+      <img
+        src="../images/web/banner/Banner01.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner1"
+      />
+      <div class="carousel-caption d-none d-md-block mb-240">
+        <h5 class="text-white fs-48">愛交友，自由配</h5>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="4500">
+      <img
+        src="../images/web/banner/Banner02.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner2"
+      />
+      <div class="carousel-caption d-none d-md-block mb-240">
+        <h5 class="text-white fs-48">專屬你的多元可能</h5>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="4500">
+      <img
+        src="../images/web/banner/Banner03.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner3"
+      />
+      <div class="carousel-caption d-none d-md-block mb-220">
+        <h5 class="text-white fs-48">客製化行程？</h5>
+        <p class="text-white fs-48 mt-16">聊一聊，都可以</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="4500">
+      <img
+        src="../images/web/banner/Banner04.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner4"
+        style="background-position: center bottom"
+      />
+      <div class="carousel-caption d-none d-md-block mb-240">
+        <h5 class="text-white fs-48">實現你的接案自由</h5>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselWeb"
+    data-bs-slide="prev"
+  >
+    <span
+      class="material-icons text-gray1 rounded-5 bg-gray6 p-16"
+      aria-hidden="true"
+    >
+      chevron_left
+    </span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselWeb"
+    data-bs-slide="next"
+  >
+    <span
+      class="material-icons text-gray1 rounded-5 bg-gray6 p-16"
+      aria-hidden="true"
+    >
+      chevron_right
+    </span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
-<div class="btn btn-main">abc</div>
+<!-- mobile -->
+<div>
+    <div
+    id="carouselMobile"
+    class="carousel slide carousel-fade d-block d-lg-none"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators mb-24">
+      <button
+        type="button"
+        data-bs-target="#carouselMobile"
+        data-bs-slide-to="0"
+        class="active btn-carouselMob me-4 border border-0 rounded-5"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselMobile"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+        class="mx-4 btn-carouselMob border border-0 rounded-5"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselMobile"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+        class="btn-carouselMob mx-4 border border-0 rounded-5"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselMobile"
+        data-bs-slide-to="3"
+        aria-label="Slide 4"
+        class="btn-carouselMob ms-4 border border-0 rounded-5"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="4500">
+        <img
+          src="../images/mobile/banner/Banner01.png"
+          class="d-block w-100 fit-cover"
+          height="800"
+          alt="banner1"
+        />
+        <div class="carousel-caption mb-140">
+          <h5 class="text-white fs-24 fw-bold">愛交友，自由配</h5>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="4500">
+        <img
+          src="../images/mobile/banner/Banner02.png"
+          class="d-block w-100 fit-cover"
+          height="800"
+          alt="banner2"
+        />
+        <div class="carousel-caption mb-140">
+          <h5 class="text-white fs-24 fw-bold">專屬你的多元可能</h5>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="4500">
+        <img
+          src="../images/mobile/banner/Banner03.png"
+          class="d-block w-100 fit-cover"
+          height="800"
+          alt="banner3"
+        />
+        <div class="carousel-caption mb-120">
+          <h5 class="text-white fs-24 fw-bold">客製化行程？</h5>
+          <p class="text-white fs-24 mt-8 fw-bold">聊一聊，都可以</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="4500">
+        <img
+          src="../images/mobile/banner/Banner04.png"
+          class="d-block w-100 fit-cover"
+          height="800"
+          alt="banner4"
+          style="background-position: center bottom"
+        />
+        <div class="carousel-caption mb-140">
+          <h5 class="text-white fs-2 fw-bold">實現你的接案自由</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="src/js/main.js"></script>
 </body>
 
 </html>
