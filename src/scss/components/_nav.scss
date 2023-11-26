@@ -1,12 +1,9 @@
-.navbar-collapse {
-    @include media-breakpoint-down(lg) {
-        background: $mbBg;
-    }
-}
-
 .navbar-collapse ul {
     @include media-breakpoint-down(lg) {
+        position: absolute;
         justify-content: start !important;
+        background: $mbBg;
+        z-index: 3;
 
         li {
 

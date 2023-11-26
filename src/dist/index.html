@@ -15,14 +15,269 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
 
-  <link rel="stylesheet" crossorigin href="/new_i_pay/assets/index-23YY_HJC.css">
+  <link rel="stylesheet" crossorigin href="/new_i_pay/assets/index-Fl6QJE0Y.css">
 </head>
 
 <body>
-header
+<nav class="navbar navbar-expand-lg">
+  <div class="container-lg">
+    <a href="index.html" class="navbar-brand">
+      <h1 class="m-0">i-pay</h1>
+      <a href="#" class="d-block me-auto"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAAAdCAYAAACpMULtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAvnSURBVHgB7VpvUhtHFn/dIznrLQHSCTw5AfIJIk4A3gsgsptsNvmAKIcEOwiNgNje2FnEh6S8W1uLfIEYX2ARJ7ByAssnkJCUMmamu/N7PTNCwkIWikNSdl6VPENP9+ue9/f33lgQqPupl9VCLZOhw+nvt6r0B/2uSPA/7U+Lz4iMawcE1Y0RuDc1dSWxlKl4LfqDflNKND/xXKLAjQeMoSz+5dsF+dI/xLVC7yi98DxXJSmtdeCy4TokZw1pVxixnypt7tIlUSLz0GscfbZeF1Y5gySEfKu8qFveWFTaeEKIaMQMTuA/8QxPXTbXgLQg32AIasHFhPPxj2gM5e8hbZB+jJmYypvE/F/dDyMNQc6KIVXCn+lw77PHMbvT3vZ+gsJzlTHyeGACwt7Md29XflLGZKQx1zhc2LdmTQg6kkQtHcmP743WNZKiJci0MOG5lsYaq9Q6LaTeT3lb9WH8DQVpCYZa60jccgY3aej4Oba8xnthUmT4Jq1l4AotFsK1ZHVrb9mK7K1gx9nv6a792foBHuSiBbv6SsJ7m/NRt1jc08Y8md7e3o/H2sVinkiX4DdLU9vbtYH56+tPIeQs5Hijf80o6qyvl+Ad3tTWtugUi6yCpemt1xt+E2E2odRTmNAMziFl/ECpxBI0ty8kzc18v1142wGDMSaL+LXHeScegyU3YNnIP2YPgkrH4+3bxTzGZmG9tXEVxKQ1iV6E09pIuNQ46zKe18ABAeCMdSJB7xC9WAMQkMG8ghzw4rNQ1QKuCF3iCQuRpGQpLkOyaTZYLKlrjovGLCIAuXhWRSx67sDYHZ14cvUehDmEOrfXS+DB89nzslJgnaFFsDoEswaHPP+9ZBnKONcROre+OsD63PTdr0WCfkMysNauo5cRXtJOUuxevTX8pd8EsYJ84T8VmtJy8BSz4Q/i06eGDhSHXCFYiWH20nY4z66h7XO/0llbn5u6NxgW27fWFwjgREfrWOtgmw+9weR0mA9JHp/wUOHcAxvr2fZAVkns8oFj9sDQTW2U36cLUmerdAB+Lgm9klSJOvOCu+aAkyrgtzJsTfdrL/uTAhKCgoBi0v6J4X0Xzs5rb3KeECVGOjMbW7Yc4FCUcMxjvITra3l9lEXGFBAnaeIQVk+I5I14XKmTtBbGTcorFgz4+mU2Id8bBAZ9QUpJzA9EAedZhLKvvbqRTiOuMcq4AfyQw5zlpNDv45zPoLRdqeFV0jzFzBkaReZ0XxlubEosVPxVowmJYas0zgeB1HwADhctvEjhxd3TmB8TG4VR+gAotRFocd0exBHNYXOhxFzIWww+w3mNhcpjUoAlMGn86hymlArmg+DYVQKGAWR7DGUdH1MLhvqDr04OiI6J5/FPB/6s0icHrNDUnTt1cGnQqOyCfYRvWlJRE/fNq/fuNSx+R5hL3cd6djN9/nKOMGyAcU6KPB8KsrwRmyciY5Mszp0nIW9MFcvXIcRHVjbBoCBtgSj1AbysFSQEwAqxMpcgvLwfDKnVJOcO8JayFo8lkyFP8GiM40UhBXB0Y2DJ1Pl8PWeMhleKecm5CGMJo9MWLBmxCUG4JydhEc8CU0YLrQzL/uDF2prLCmcYryMhvnLmMKYxW8hahOeD3uBlIbDmxyrUUufm7f+3b94ynfCn7X3nZRP7uVBmg+dIa9WhRbami97+WYFyWKIRZFFQVAjjHCtTRa8WPbKHE4p6QuQX9uG1vB+ATzmDHMRCFpGXwPIa/bzt3iHvgbNppcL9AKFpTOLCHLI54nYXGCxDSCYIzC4jsFioTFMP7ni4IFRJvlLn6Pgxe5pSZo615L+kA6F1A3VuS/n0ar0E4RsdAjLwncXfz+1Z+/OdDr2jWVhjb5mLvJJ5HWJhDWG5Bs/b10rYsJwIHCjIWMM47N+LBfoTLB7sbtAIcpwgBzOHxYvq1LpX7T2Q4gMwbaU8r/ci3TCP5IiFvjF6rs2TivdnbxIDxiNtjuIbOTYc5jCDS+YFBOMDpbEwMpV7jU5hjTUkRGB2uoXbQHMaxhImhHbhFocdnI3qPPeo8EUZKX+HUdvMv+5khm5kHQSxIYwgWcwNDckqSWTbhbU8hc5LfeP7U5W758o5IYzKsidCEgMv3OXkr+nR1FdenUaQ0DJn7SYQvV6WFbDROVZcPNbZ2ihx9W1f/4xBWG8RYmAfZQ3EJvqBMMxAgj2RQ13q1GvHJkUyjZ5ADRGLQy1HrkfoQjCSgxwUoopohegNOQXGhDM/8kVg322m8k3lqHDLtnRopEw4m7AyTQu9h0r0jshjej5EjPxchAUQK0nQyJCdwOw0T0YjsUY9QZT2OFmjiTjSiyxJMcte4Lx3ulEkYPIdUearVZARXBA+wl7Z/pfkZ1ifhkH82BvbLO3YuZLmWYFKhWez3o2OgLHvZn6kCShVsR41F/+dPFFp7UhGmA3tiDn2mFHrZyp3RzeccVgUXFxb1ZVDSzE/Jf50PaGOs7YXRXRgFeTQAIo7j07rpJdI4LZusVA86yfEHI1DYfiiwNfPulsb/Jmjhhd22Ys458QK8pNizjlBc5MnS2Gha095tl1l6r0xFHGpjc3r7c2Nxf7MbL3bhKABZWeNfiF1P/1yGX05DxrnHptwDD1rf/YlWUsP7TwUX6+XRtXp7/65NJKpohAZCOTcPoVHHZwa3/Metn/oi1BRr9FSghg1GV1KIl90uVWCMMICzYxRWHa2vJzNghFFnznCpK7MEddPXHvF/LqbRcBXsYiJC53NDe4Ut+Btc44y6ByL5e5mieN/judHsuH2iJtMmB3wcq1BGNqF+JZJOzWakJqfrLmOUHuaUW10fOxVMwwI4L7G+oK0jzjBAwAucB8NISr3WubhIkQ8vdP+x2pLoPMGvtQD0hFDijtyDFrk6MZPgtEYhLcSCo92fS0qmeKYsFbrXGRvZVxL0dvWyOYeM4+TPvKNvAEFWX6+dqooQj+I+mZPgivYC8o72izuIiEvAtC6gOU9A4E3rsAyHzM857pLMFSXcv4syBiXmh+tZh3JoEMtcJsfXr8r2CON+QHfIq4p4yxlHp5a/wsoMyC1Z2wnWzzTvvnLWBuFYAAywE+dfoPg1p1RHAVwp6K5DAjU8KKp8/cvdnCu9C/q3bGnsHUHWjLSSaN+Sae+urjwXkcMxX2fLFxHvmriteqoxcYLx3109PHnTyEfBkoNVD5QyIMajzc/Wc07mvagNzRYqawcp+YYxWF3UVsJi4q++ufyOE3n9kereXjLnhJmLub/ypyPV1k1VSWcMvZ5RhxG/31/adg8rsR+We8O4Q0vXY8Kyl+tax4rPgqvAyDjIgTP3FWobzL/+WYAyWYe3q9CuJxKdjBrz1GBNX+UO3XpmJWph/drdBHi4tgZ8ZwjHGcEYdMCDWuOd+H1SttPS62JlRQLDOH2OV0SxeVCf/fhIjQNZcT3pgCQ1O0i7IpZ9O4WkDeyHKJYwoLFFn4SzCLlljp/+3wevQp0sHUrlUrVxSiP4jAmEdZ8sdj+cNUdOsfWSdiB05KtUUW+/ddVrsnqmktOroc19z7tSesTKykW2JtAWeMSag/OR6QSdOGQ2s2vZrVEp0FItFuM2z7quPZB/F3cwNjQAAUc3yffbzkymUM+AEBBDiXCTxW4rd056pj2hzdZj02s253634Ny/z6w/oa0DQyThxfke2e3ySdM4Iy1YBiHnP/aSzdrGM5hdAGrFuC+dmYE+JpA9OWJlQSBcZcAV+eN56DzNw1bRJkJPmloUstoweWjwgSeIOsoalEy0I+K9H6mWmmcWVLlXzNf4P+Awh19C3gsejXW1zL8vQdzBpSUqT6oYc374J9j+TghxuZQCwXGaEE2Mnvf1vhueu/bOXhqDhE2HfdAQwjoQ67pRqbqTR7u4k/tgaJLUVIvH4Xo8cIERbAwuXPQGqKQcymaW41+llhxkaW3XrNmLJr673CAEdNESmK0hU8N6T7Q8KtTr32lzeEk6y+imMvkNQ5JmoSUyvEFye3SQIPNR2Q/WVxeeP2d0ERKsvmIbAFxifkobD+d/ZzxLtBESkLLw4acS7VqICnb+fa8d86TfgYRTcpx50qwhgAAAABJRU5ErkJggg==" alt="logo" class="my-lg-7 my-6" width="105"
+          height="29" /></a>
+    </a>
+    <button class="navbar-toggler me-12 p-8 border-0" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarContent" aria-controls="navbar controler" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="material-icons p-8 ms-auto">menu
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav d-flex align-items-center mb-2 mb-lg-0 w-100 justify-content-center autoHeight">
+        <li class="nav-item">
+          <a href="#" class="nav-link active hover p-lg-12 me-lg-12 navActive">條件找陪玩</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="hover p-lg-12 mx-lg-12">地圖找陪玩</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="hover p-lg-12 mx-lg-12">快速上手</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="hover p-lg-12 ms-lg-12">招募訊息</a>
+        </li>
+        <li class="nav-item d-block d-lg-none d-flex">
+          <a href="#" class="hover p-lg-12 ms-lg-12 d-flex align-items-center justify-content-center"><span
+              class="material-icons me-8"> shopping_cart </span>購物車</a>
+        </li>
+        <li class="nav-item d-block d-lg-none">
+          <a href="#" class="hover p-lg-12 ms-lg-12 d-flex align-items-center justify-content-center"><span
+              class="material-icons me-8"> person </span>個人主頁</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="list-unstyled m-0 d-none d-lg-flex">
+      <li><a href="#" class="hover"><span class="material-icons p-lg-12 ms-lg-12"> shopping_cart </span></a></li>
+      <li><a href="#" class="hover"><span class="material-icons p-lg-12 ms-lg-12"> person </span></a></li>
+    </ul>
+  </div>
+</nav>
 
-<div class="btn btn-main">abc</div>
+<script>
+  const menuBtn = document.querySelector('.navbar button');
+  const menuBtnSpan = document.querySelector('.navbar button span');
+  console.log('menuBtn', menuBtn);
+  console.log('menuBtnSpan', menuBtnSpan.innerText);
+  menuBtn.addEventListener('click', function () {
+    if (menuBtnSpan.innerText === 'menu') {
+      menuBtnSpan.innerText = 'close'
+    } else if (menuBtnSpan.innerText === 'close')
+      menuBtnSpan.innerText = 'menu'
+  })
+</script><!-- web -->
+<div
+  id="carouselWeb"
+  class="carousel slide carousel-fade d-none d-lg-block"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-indicators mb-32">
+    <button
+      type="button"
+      data-bs-target="#carouselWeb"
+      data-bs-slide-to="0"
+      class="active border border-0 rounded-5 btn-carouselWeb"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselWeb"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+      class="border border-0 rounded-5 btn-carouselWeb ms-12 me-8"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselWeb"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+      class="border border-0 rounded-5 btn-carouselWeb ms-8 me-12"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselWeb"
+      data-bs-slide-to="3"
+      aria-label="Slide 4"
+      class="border border-0 rounded-5 btn-carouselWeb"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="3500">
+      <img
+        src="/new_i_pay/assets/Banner01-1KFKLnwU.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner1"
+      />
+      <div class="carousel-caption d-none d-md-block mb-240">
+        <h5 class="text-white fs-48">愛交友，自由配</h5>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="4500">
+      <img
+        src="/new_i_pay/assets/Banner02-33ESnDB8.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner2"
+      />
+      <div class="carousel-caption d-none d-md-block mb-240">
+        <h5 class="text-white fs-48">專屬你的多元可能</h5>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="4500">
+      <img
+        src="/new_i_pay/assets/Banner03-ihJNnBOv.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner3"
+      />
+      <div class="carousel-caption d-none d-md-block mb-220">
+        <h5 class="text-white fs-48">客製化行程？</h5>
+        <p class="text-white fs-48 mt-16">聊一聊，都可以</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="4500">
+      <img
+        src="/new_i_pay/assets/Banner04-_ZituEjk.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner4"
+        style="background-position: center bottom"
+      />
+      <div class="carousel-caption d-none d-md-block mb-240">
+        <h5 class="text-white fs-48">實現你的接案自由</h5>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselWeb"
+    data-bs-slide="prev"
+  >
+    <span
+      class="material-icons text-gray1 rounded-5 bg-gray6 p-16"
+      aria-hidden="true"
+    >
+      chevron_left
+    </span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselWeb"
+    data-bs-slide="next"
+  >
+    <span
+      class="material-icons text-gray1 rounded-5 bg-gray6 p-16"
+      aria-hidden="true"
+    >
+      chevron_right
+    </span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- mobile -->
+<div
+  id="carouselMobile"
+  class="carousel slide carousel-fade d-block d-lg-none"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-indicators mb-24">
+    <button
+      type="button"
+      data-bs-target="#carouselMobile"
+      data-bs-slide-to="0"
+      class="active btn-carouselMob me-4 border border-0 rounded-5"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselMobile"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+      class="mx-4 btn-carouselMob border border-0 rounded-5"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselMobile"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+      class="btn-carouselMob mx-4 border border-0 rounded-5"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselMobile"
+      data-bs-slide-to="3"
+      aria-label="Slide 4"
+      class="btn-carouselMob ms-4 border border-0 rounded-5"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="4500">
+      <img
+        src="/new_i_pay/assets/Banner01-Z0BvuaWD.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner1"
+      />
+      <div class="carousel-caption mb-140">
+        <h5 class="text-white fs-24 fw-bold">愛交友，自由配</h5>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="4500">
+      <img
+        src="/new_i_pay/assets/Banner02-emguNori.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner2"
+      />
+      <div class="carousel-caption mb-140">
+        <h5 class="text-white fs-24 fw-bold">專屬你的多元可能</h5>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="4500">
+      <img
+        src="/new_i_pay/assets/Banner03-b3GZ38dS.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner3"
+      />
+      <div class="carousel-caption mb-120">
+        <h5 class="text-white fs-24 fw-bold">客製化行程？</h5>
+        <p class="text-white fs-24 mt-8">聊一聊，都可以</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="4500">
+      <img
+        src="/new_i_pay/assets/Banner04-3AWh-PNt.png"
+        class="d-block w-100 fit-cover"
+        height="800"
+        alt="banner4"
+        style="background-position: center bottom"
+      />
+      <div class="carousel-caption mb-140">
+        <h5 class="text-white fs-2 fw-bold">實現你的接案自由</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 
 </html>
