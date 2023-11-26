@@ -3,3 +3,13 @@
 @import "../scss/bootstrapCustomized/bootstrap";
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "../scss/base/base";
+
+// components
+@import "../scss/components/font";
+@import "../scss/components/nav";
+@import "../scss/components/hover";
+
+// utilities
+@import "../scss/utilities/spacing";

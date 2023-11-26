@@ -1,0 +1,42 @@
+.navbar-collapse {
+    @include media-breakpoint-down(lg) {
+        background: $mbBg;
+    }
+}
+
+.navbar-collapse ul {
+    @include media-breakpoint-down(lg) {
+        justify-content: start !important;
+
+        li {
+
+            width: 100%;
+            padding: 0px 12px;
+
+
+            &:first-child {
+                margin-top: 48px;
+            }
+
+            &:not(:first-child) {
+                margin-top: 16px;
+            }
+
+            a {
+
+                width: 100%;
+                display: block;
+                padding: 20px 0px;
+                text-align: center;
+                border-radius: 8px;
+                color: black;
+
+
+                &:hover {
+                    color: $dark !important;
+                    background: $secondaryLight;
+                }
+            }
+        }
+    }
+}

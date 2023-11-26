@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-lg">
+    <a href="index.html" class="navbar-brand">
+      <h1 class="m-0">i-pay</h1>
+      <a href="#" class="d-block me-auto"><img src="images/logo/Logo.png" alt="logo" class="my-lg-7 my-6" width="105"
+          height="29" /></a>
+    </a>
+    <button class="navbar-toggler me-12 p-8 border-0" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarContent" aria-controls="navbar controler" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="material-icons p-8 ms-auto">menu
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav d-flex align-items-center mb-2 mb-lg-0 w-100 justify-content-center autoHeight">
+        <li class="nav-item">
+          <a href="#" class="nav-link active hover p-lg-12 me-lg-12 navActive">條件找陪玩</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="hover p-lg-12 mx-lg-12">地圖找陪玩</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="hover p-lg-12 mx-lg-12">快速上手</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="hover p-lg-12 ms-lg-12">招募訊息</a>
+        </li>
+        <li class="nav-item d-block d-lg-none d-flex">
+          <a href="#" class="hover p-lg-12 ms-lg-12 d-flex align-items-center justify-content-center"><span
+              class="material-icons me-8"> shopping_cart </span>購物車</a>
+        </li>
+        <li class="nav-item d-block d-lg-none">
+          <a href="#" class="hover p-lg-12 ms-lg-12 d-flex align-items-center justify-content-center"><span
+              class="material-icons me-8"> person </span>個人主頁</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="list-unstyled m-0 d-none d-lg-flex">
+      <li><a href="#" class="hover"><span class="material-icons p-lg-12 ms-lg-12"> shopping_cart </span></a></li>
+      <li><a href="#" class="hover"><span class="material-icons p-lg-12 ms-lg-12"> person </span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.querySelector('.navbar button');
+  const menuBtnSpan = document.querySelector('.navbar button span');
+  console.log('menuBtn', menuBtn);
+  console.log('menuBtnSpan', menuBtnSpan.innerText);
+  menuBtn.addEventListener('click', function () {
+    if (menuBtnSpan.innerText === 'menu') {
+      menuBtnSpan.innerText = 'close'
+    } else if (menuBtnSpan.innerText === 'close')
+      menuBtnSpan.innerText = 'menu'
+  })
+</script>
