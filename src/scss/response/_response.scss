@@ -1,0 +1,7 @@
+main ul li{
+    width:30% !important;
+    margin: 12px !important;
+    @include media-breakpoint-down(lg) {
+       width: auto !important;
+    }
+}
