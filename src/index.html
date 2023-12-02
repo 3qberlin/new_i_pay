@@ -16,14 +16,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
+
 
 </head>
 
 <body>
-<%- include('./ejs/nav') -%>
-<%- include('./ejs/banner') -%>
+    <%- include('./ejs/nav') -%>
+        <%- include('./ejs/banner') -%>
+            <%- include('./ejs/main') -%>
+                <script>
+                    $(document).ready(function () {
+                        $(".carousel-indicators .btn-carouselWeb:first-child").addClass(
+                            "btn-carouselWebActive"
+                        );
 
+                        $("#carouselWeb").on("slide.bs.carousel", function (event) {
+                            $(".carousel-indicators .btn-carouselWeb").removeClass(
+                                "btn-carouselWebActive"
+                            );
+                            $(
+                                '.carousel-indicators .btn-carouselWeb[data-bs-slide-to="' +
+                                event.to +
+                                '"]'
+                            ).addClass("btn-carouselWebActive");
+                        });
+
+                        $(".carousel-indicators .btn-carouselMob:first-child").addClass(
+                            "btn-carouselMobActive"
+                        );
+
+                        $("#carouselMobile").on("slide.bs.carousel", function (event) {
+                            $(".carousel-indicators .btn-carouselMob").removeClass(
+                                "btn-carouselMobActive"
+                            );
+                            $(
+                                '.carousel-indicators .btn-carouselMob[data-bs-slide-to="' +
+                                event.to +
+                                '"]'
+                            ).addClass("btn-carouselMobActive");
+                        });
+                    });
+
+
+                </script>
+                <script type="module" src="../src/js/main.cjs"></script>
 </body>
 
 </html>

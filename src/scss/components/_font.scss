@@ -1,10 +1,31 @@
 h1 {
-    display: block;
-    height: 0;
-    width: 0;
-    overflow: hidden;
-  }
+  display: block;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
 
-  .carouselWeb h5, .carouselWeb p{
-    font-weight: 700;
-  }
+.carouselWeb h5,
+.carouselWeb p {
+  font-weight: 700;
+}
+
+.fw-md {
+  font-weight: 500;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+.w-96 {
+  width: 96px;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.carouselWeb h5, .carouselWeb p{
+  font-weight: 700;
+}

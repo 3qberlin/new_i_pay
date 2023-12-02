@@ -1,0 +1,33 @@
+// web
+.btn- {
+    &carouselWeb {
+        width: 32px !important;
+        height: 12px !important;
+        background-color: $gray-100 !important;
+    }
+
+    &carouselWebActive {
+        width: 56px !important;
+        height: 12px !important;
+        background-color: $secondary !important;
+    }
+
+    &carouselMob {
+        width: 20px !important;
+        height: 4px !important;
+        background-color: $gray-100 !important;
+    }
+
+    &carouselMobActive {
+        width: 40px !important;
+        height: 4px !important;
+        background-color: $secondary !important;
+    }
+}
+
+
+.cartNum {
+    top: -5px;
+    right: -2px;
+    padding: 0px 5px;
+}

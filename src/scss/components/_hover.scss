@@ -4,11 +4,18 @@
 
 .icons:hover{
     color:$main !important;
-    border:1px solid $main m !important;
+    border:1px solid $main !important;
 }
 
 .hireIcons:hover{
     color:$main !important;
     background-color: $gray-200 !important;
     border:0px solid transparent !important;
+}
+
+
+.abc{
+    &:hover{
+        background: lime;
+    }
 }

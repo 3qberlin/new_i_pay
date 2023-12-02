@@ -52,6 +52,7 @@ $mainLight: #f5afa8 !default;
 $mainTransparent: #f5d1cf !default;
 $skin: #ffc19f !default;
 $mbBg: #F9F7F9 !default;
+$starYellow: #FCF187 !default;
 
 // scss-docs-end color-variables
 
@@ -323,6 +324,7 @@ $danger: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-900 !default;
 $mbBg:$mbBg !default;
+$starYellow:$starYellow !default;
 
 // scss-docs-end theme-color-variables
 
@@ -350,7 +352,8 @@ $theme-colors: (
   "gray3": $gray-400,
   "gray2": $gray-500,
   "gray1": $gray-600,
-  "mbBg":$mbBg
+  "mbBg":$mbBg,
+  "starYellow":$starYellow
 ) !default;
 // scss-docs-end theme-colors-map
 
