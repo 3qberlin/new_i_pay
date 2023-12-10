@@ -7,7 +7,8 @@
     "node": "node server.js",
     "build": "vite build",
     "deploy": "gh-pages -d src/dist",
-    "vite": "vite"
+    "vite": "vite",
+    "start": "concurrently \"npm run vite\" \"json-server-auth db.json --port 3000\""
   },
   "dependencies": {
     "bootstrap": "^5.3.2",
@@ -16,5 +17,8 @@
     "json-server-auth": "^2.1.0",
     "sass": "^1.69.5",
     "vite-plugin-ejs": "^1.6.4"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
