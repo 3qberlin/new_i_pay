@@ -15,5 +15,11 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "cards":[{
+    "score":4.9,
+    "name":"賈金牌",
+    "price":880,
+    "service":"公園下棋、帶小孩"
+  }]
 }
