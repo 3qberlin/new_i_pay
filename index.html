@@ -15,8 +15,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"
+        integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const localUrl = "http://localhost:3000/";
+        const renderUrl = "https://new-i-pay.onrender.com/";
+        const cards = "cards/";
+    </script>
   <script type="module" crossorigin src="/new_i_pay/assets/index-TIZn7_Jj.js"></script>
   <link rel="stylesheet" crossorigin href="/new_i_pay/assets/index-OiwM9oAV.css">
 </head>
@@ -289,197 +295,71 @@
                     </span></p>
             </a>
         </section>
-        <ul class="list-unstyled mt-48 d-flex flex-wrap row row-cols-1 row-cols-lg-3 g-5 justify-content-center">
-            <li class="card rounded-5 border-0 shadow col-auto p-0">
-                <div class="card-body m-0 p-0">
-                    <div class="imgArea position-relative">
-                        <img src="/new_i_pay/assets/01-Okk1ibuX.png" alt="product01">
-                        <div
-                            class="position-absolute start-0 top-0 ms-12 mt-12 ms-md-24 mt-md-24 d-flex align-items-center z-1">
-                            <div class="d-flex align-items-center ">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAArCAYAAAA+EwvfAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARiSURBVHgB1VnNUhtHEO6ZXUnYAiNVHH6UyyonTkY5JCcfqJxy5AGSAj+ByRMgPYHhCQJv4DxAUlxycqqCKxdOQZcgAnFJlgCtfnbG3SONLNnSMmvNgvxVTc3sama2v+756W4BxISL86vnF+dvq1QuK41diAkMYsBFpb4tQf6Sck/Uc6u7hh9iz5ZWHx2AZXCIASj8LmcNmE/+rorL/1XvIAZYJ0Dax8p7mHg1eNdve/3frMI6Aa19vXwICecsNitYJTBO+xpxWcEqgXHa19BWQGyBRVgjEKZ9jQfu30Ry47JS3QBLsEYgTPsaSfcf4KyOfR1re8EKgUqlsQG3aF/jYeJPq1awQsAx0L4G9bFphakJkPZJoyba17BpBRc+Aaen1Uw6nfAgEAUJwlj7GknnFK3QAiFSL/47q5c4Y7Urv3ucz2drEBHMREjGZEZItg5SFhgHT0rIDPcldyEKAYLfeQLXnaejwjCogWTHUtXyNbWZy8vX153yJHIjBMhrFEwWSFB89IZ/Iy27/H/8SEvV+pnqaRDIL0DIFOrpMZZH0MVayAVVxpHD5uGwUzggcHHeeCGl2HFQKLdfANp4AV3iRrlSgt81iJwmFShiKWznUGl878uVhZ8/IPC2mnROMrQcZhlX7e+hFazVllcWs/Q8cgoJsQCfGwYEukKUOuIraHa+hVnFDcpGwRFIsa/fDQjkctk9AaJEnWaRxHu5RGl5NVvU7z86RiuVapED351zX0M6+QfMAiYJTxh7D2gSKecE5lP3u6nDhCdMvMhmgcRN+yk0u09gkvCE0KzEfZJQxyVt2BDhCbemVe6DhKnwBKO80F2SiCI8wTixdRckogpPMI4HVmlCxl7iNQ5xoRPk0Y+EX02FJ0QKaBi60Y5y8uIB+wTPNhIBKSUSqENc6LnrsB5ljDGBKgY4uGMKDnsDcaHnwoNHwZTpGGMC/pxbGPpILKC4g5BOjwZT4WNMO+LyUfWUEVgYXAyeFAKnYDrGmABlEdRH4rQAKkcF+72Q1myMcUfG1uM8gTSYIsGMN7JxWiXqCdTB2LXZ/g7j2gW8+H6DBD8zGkcWbsnHdi0Q5QQiwev+pipdmathdqFM7Ub7BwzMbw9Z1RLF+8b0JDIiYHICkabJFRgIju7AdVPkl1cX89h+1u5+Xa75P6k+YUT0STQ/B0ZWMFpCjAnMFY0/gSSmOnz02SnwoNwNCrvvN2FvOBGFbsgB+lJH2NxuB2vP0d/JUCLsgfsKHD46pz6JAsmJwBHYIAACPMZbIxbQglPAQW3MKe3f+FCclEFDEmWsikjkAJ3CIpLYIseNcqqYzhkQ0SdRIFMeGCCSK0GmJ2EpxKv6P/a0DnMvUev5lVx2xyS3SURwWW3TGHw8pDnqrc2+F9pbilFgGg94DuN/4T++amMRCfzf9yiAoIQCHcEUoLnJItjcep/9S9UCKb7pWy0UUeIBj0m+wxhbFBAcTiv4mPk3cP5Nmp85wf7SUvbYZNw7ekdcTaL/pK0AAAAASUVORK5CYII=" alt="star" class="w-32px"> <span
-                                    class="text-yellow ms-8 fs-16 text-starYellow fw-bolder fs-24">4.9</span>
-                            </div>
-                        </div>
-                        <div class="position-absolute end-0 top-0 z-1">
-                            <a href="#">
-                                <span
-                                    class="material-symbols-outlined p-8 bg-secondaryLight rounded-5 icons me-12 mt-12 me-md-24 mt-md-24">
-                                    favorite
-                                </span>
-                            </a>
-                        </div>
-                        <div
-                            class="position-absolute start-0 bottom-0 ms-12 mb-12 ms-md-24 mb-md-24 d-flex align-items-center z-1">
-                            <p class="fs-24 text-white my-auto">頁少爺</p>
-                            <div
-                                class="bg-blueLight rounded-5 d-flex align-items-center px-8 py-5 text-white ms-8 ms-md-16">
-                                <span class="material-icons"> male </span>
-                                <span class="ms-4">62</span>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="p-12 p-md-24">
-                        <p class="fs-24">NT$ 800</p>
-                        <section class="mt-12">
-                            <h4 class="mt-8">服務項目</h4>
-                            <p>伴遊、伴唱</p>
-                        </section>
-                        <div class="d-flex">
-                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-start-pill">
-                                加入購物車</a>
-                            <div class="vl border-1 border-start border-white"></div>
-                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-end-pill">
-                                下單</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="card rounded-5 border-0 shadow col-auto p-0">
-                <div class="card-body m-0 p-0">
-                    <div class="imgArea position-relative">
-                        <img src="/new_i_pay/assets/01-Okk1ibuX.png" alt="product01" class="img-fluid">
-                        <div
-                            class="position-absolute start-0 top-0 ms-12 mt-12 ms-md-24 mt-md-24 d-flex align-items-center z-1">
-                            <div class="d-flex align-items-center ">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAArCAYAAAA+EwvfAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARiSURBVHgB1VnNUhtHEO6ZXUnYAiNVHH6UyyonTkY5JCcfqJxy5AGSAj+ByRMgPYHhCQJv4DxAUlxycqqCKxdOQZcgAnFJlgCtfnbG3SONLNnSMmvNgvxVTc3sama2v+756W4BxISL86vnF+dvq1QuK41diAkMYsBFpb4tQf6Sck/Uc6u7hh9iz5ZWHx2AZXCIASj8LmcNmE/+rorL/1XvIAZYJ0Dax8p7mHg1eNdve/3frMI6Aa19vXwICecsNitYJTBO+xpxWcEqgXHa19BWQGyBRVgjEKZ9jQfu30Ry47JS3QBLsEYgTPsaSfcf4KyOfR1re8EKgUqlsQG3aF/jYeJPq1awQsAx0L4G9bFphakJkPZJoyba17BpBRc+Aaen1Uw6nfAgEAUJwlj7GknnFK3QAiFSL/47q5c4Y7Urv3ucz2drEBHMREjGZEZItg5SFhgHT0rIDPcldyEKAYLfeQLXnaejwjCogWTHUtXyNbWZy8vX153yJHIjBMhrFEwWSFB89IZ/Iy27/H/8SEvV+pnqaRDIL0DIFOrpMZZH0MVayAVVxpHD5uGwUzggcHHeeCGl2HFQKLdfANp4AV3iRrlSgt81iJwmFShiKWznUGl878uVhZ8/IPC2mnROMrQcZhlX7e+hFazVllcWs/Q8cgoJsQCfGwYEukKUOuIraHa+hVnFDcpGwRFIsa/fDQjkctk9AaJEnWaRxHu5RGl5NVvU7z86RiuVapED351zX0M6+QfMAiYJTxh7D2gSKecE5lP3u6nDhCdMvMhmgcRN+yk0u09gkvCE0KzEfZJQxyVt2BDhCbemVe6DhKnwBKO80F2SiCI8wTixdRckogpPMI4HVmlCxl7iNQ5xoRPk0Y+EX02FJ0QKaBi60Y5y8uIB+wTPNhIBKSUSqENc6LnrsB5ljDGBKgY4uGMKDnsDcaHnwoNHwZTpGGMC/pxbGPpILKC4g5BOjwZT4WNMO+LyUfWUEVgYXAyeFAKnYDrGmABlEdRH4rQAKkcF+72Q1myMcUfG1uM8gTSYIsGMN7JxWiXqCdTB2LXZ/g7j2gW8+H6DBD8zGkcWbsnHdi0Q5QQiwev+pipdmathdqFM7Ub7BwzMbw9Z1RLF+8b0JDIiYHICkabJFRgIju7AdVPkl1cX89h+1u5+Xa75P6k+YUT0STQ/B0ZWMFpCjAnMFY0/gSSmOnz02SnwoNwNCrvvN2FvOBGFbsgB+lJH2NxuB2vP0d/JUCLsgfsKHD46pz6JAsmJwBHYIAACPMZbIxbQglPAQW3MKe3f+FCclEFDEmWsikjkAJ3CIpLYIseNcqqYzhkQ0SdRIFMeGCCSK0GmJ2EpxKv6P/a0DnMvUev5lVx2xyS3SURwWW3TGHw8pDnqrc2+F9pbilFgGg94DuN/4T++amMRCfzf9yiAoIQCHcEUoLnJItjcep/9S9UCKb7pWy0UUeIBj0m+wxhbFBAcTiv4mPk3cP5Nmp85wf7SUvbYZNw7ekdcTaL/pK0AAAAASUVORK5CYII=" alt="star" class="w-32px"> <span
-                                    class="text-yellow ms-8 fs-16 text-starYellow fw-bolder fs-24">4.9</span>
-                            </div>
-                        </div>
-                        <div class="position-absolute end-0 top-0 z-1">
-                            <a href="#">
-                                <span
-                                    class="material-symbols-outlined p-8 bg-secondaryLight rounded-5 icons me-12 mt-12 me-md-24 mt-md-24">
-                                    favorite
-                                </span>
-                            </a>
-                        </div>
-                        <div
-                            class="position-absolute start-0 bottom-0 ms-12 mb-12 ms-md-24 mb-md-24 d-flex align-items-center z-1">
-                            <p class="fs-24 text-white my-auto">頁少爺</p>
-                            <div
-                                class="bg-blueLight rounded-5 d-flex align-items-center px-8 py-5 text-white ms-8 ms-md-16">
-                                <span class="material-icons"> male </span>
-                                <span class="ms-4">62</span>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="p-12 p-md-24">
-                        <p class="fs-24">NT$ 800</p>
-                        <section class="mt-12">
-                            <h4 class="mt-8">服務項目</h4>
-                            <p>伴遊、伴唱</p>
-                        </section>
-                        <div class="d-flex">
-                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-start-pill">
-                                加入購物車</a>
-                            <div class="vl border-1 border-start border-white"></div>
-                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-end-pill">
-                                下單</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="card rounded-5 border-0 shadow col-auto p-0">
-                <div class="card-body m-0 p-0">
-                    <div class="imgArea position-relative">
-                        <img src="/new_i_pay/assets/01-Okk1ibuX.png" alt="product01">
-                        <div
-                            class="position-absolute start-0 top-0 ms-12 mt-12 ms-md-24 mt-md-24 d-flex align-items-center z-1">
-                            <div class="d-flex align-items-center ">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAArCAYAAAA+EwvfAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARiSURBVHgB1VnNUhtHEO6ZXUnYAiNVHH6UyyonTkY5JCcfqJxy5AGSAj+ByRMgPYHhCQJv4DxAUlxycqqCKxdOQZcgAnFJlgCtfnbG3SONLNnSMmvNgvxVTc3sama2v+756W4BxISL86vnF+dvq1QuK41diAkMYsBFpb4tQf6Sck/Uc6u7hh9iz5ZWHx2AZXCIASj8LmcNmE/+rorL/1XvIAZYJ0Dax8p7mHg1eNdve/3frMI6Aa19vXwICecsNitYJTBO+xpxWcEqgXHa19BWQGyBRVgjEKZ9jQfu30Ry47JS3QBLsEYgTPsaSfcf4KyOfR1re8EKgUqlsQG3aF/jYeJPq1awQsAx0L4G9bFphakJkPZJoyba17BpBRc+Aaen1Uw6nfAgEAUJwlj7GknnFK3QAiFSL/47q5c4Y7Urv3ucz2drEBHMREjGZEZItg5SFhgHT0rIDPcldyEKAYLfeQLXnaejwjCogWTHUtXyNbWZy8vX153yJHIjBMhrFEwWSFB89IZ/Iy27/H/8SEvV+pnqaRDIL0DIFOrpMZZH0MVayAVVxpHD5uGwUzggcHHeeCGl2HFQKLdfANp4AV3iRrlSgt81iJwmFShiKWznUGl878uVhZ8/IPC2mnROMrQcZhlX7e+hFazVllcWs/Q8cgoJsQCfGwYEukKUOuIraHa+hVnFDcpGwRFIsa/fDQjkctk9AaJEnWaRxHu5RGl5NVvU7z86RiuVapED351zX0M6+QfMAiYJTxh7D2gSKecE5lP3u6nDhCdMvMhmgcRN+yk0u09gkvCE0KzEfZJQxyVt2BDhCbemVe6DhKnwBKO80F2SiCI8wTixdRckogpPMI4HVmlCxl7iNQ5xoRPk0Y+EX02FJ0QKaBi60Y5y8uIB+wTPNhIBKSUSqENc6LnrsB5ljDGBKgY4uGMKDnsDcaHnwoNHwZTpGGMC/pxbGPpILKC4g5BOjwZT4WNMO+LyUfWUEVgYXAyeFAKnYDrGmABlEdRH4rQAKkcF+72Q1myMcUfG1uM8gTSYIsGMN7JxWiXqCdTB2LXZ/g7j2gW8+H6DBD8zGkcWbsnHdi0Q5QQiwev+pipdmathdqFM7Ub7BwzMbw9Z1RLF+8b0JDIiYHICkabJFRgIju7AdVPkl1cX89h+1u5+Xa75P6k+YUT0STQ/B0ZWMFpCjAnMFY0/gSSmOnz02SnwoNwNCrvvN2FvOBGFbsgB+lJH2NxuB2vP0d/JUCLsgfsKHD46pz6JAsmJwBHYIAACPMZbIxbQglPAQW3MKe3f+FCclEFDEmWsikjkAJ3CIpLYIseNcqqYzhkQ0SdRIFMeGCCSK0GmJ2EpxKv6P/a0DnMvUev5lVx2xyS3SURwWW3TGHw8pDnqrc2+F9pbilFgGg94DuN/4T++amMRCfzf9yiAoIQCHcEUoLnJItjcep/9S9UCKb7pWy0UUeIBj0m+wxhbFBAcTiv4mPk3cP5Nmp85wf7SUvbYZNw7ekdcTaL/pK0AAAAASUVORK5CYII=" alt="star" class="w-32px"> <span
-                                    class="text-yellow ms-8 fs-16 text-starYellow fw-bolder fs-24">4.9</span>
-                            </div>
-                        </div>
-                        <div class="position-absolute end-0 top-0 z-1">
-                            <a href="#">
-                                <span
-                                    class="material-symbols-outlined p-8 bg-secondaryLight rounded-5 icons me-12 mt-12 me-md-24 mt-md-24">
-                                    favorite
-                                </span>
-                            </a>
-                        </div>
-                        <div
-                            class="position-absolute start-0 bottom-0 ms-12 mb-12 ms-md-24 mb-md-24 d-flex align-items-center z-1">
-                            <p class="fs-24 text-white my-auto">頁少爺</p>
-                            <div
-                                class="bg-blueLight rounded-5 d-flex align-items-center px-8 py-5 text-white ms-8 ms-md-16">
-                                <span class="material-icons"> male </span>
-                                <span class="ms-4">62</span>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="p-12 p-md-24">
-                        <p class="fs-24">NT$ 800</p>
-                        <section class="mt-12">
-                            <h4 class="mt-8">服務項目</h4>
-                            <p>伴遊、伴唱</p>
-                        </section>
-                        <div class="d-flex">
-                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-start-pill">
-                                加入購物車</a>
-                            <div class="vl border-1 border-start border-white"></div>
-                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-end-pill">
-                                下單</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="card rounded-5 border-0 shadow col-auto p-0">
-                <div class="card-body m-0 p-0">
-                    <div class="imgArea position-relative">
-                        <img src="/new_i_pay/assets/01-Okk1ibuX.png" alt="product01">
-                        <div
-                            class="position-absolute start-0 top-0 ms-12 mt-12 ms-md-24 mt-md-24 d-flex align-items-center z-1">
-                            <div class="d-flex align-items-center ">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAArCAYAAAA+EwvfAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARiSURBVHgB1VnNUhtHEO6ZXUnYAiNVHH6UyyonTkY5JCcfqJxy5AGSAj+ByRMgPYHhCQJv4DxAUlxycqqCKxdOQZcgAnFJlgCtfnbG3SONLNnSMmvNgvxVTc3sama2v+756W4BxISL86vnF+dvq1QuK41diAkMYsBFpb4tQf6Sck/Uc6u7hh9iz5ZWHx2AZXCIASj8LmcNmE/+rorL/1XvIAZYJ0Dax8p7mHg1eNdve/3frMI6Aa19vXwICecsNitYJTBO+xpxWcEqgXHa19BWQGyBRVgjEKZ9jQfu30Ry47JS3QBLsEYgTPsaSfcf4KyOfR1re8EKgUqlsQG3aF/jYeJPq1awQsAx0L4G9bFphakJkPZJoyba17BpBRc+Aaen1Uw6nfAgEAUJwlj7GknnFK3QAiFSL/47q5c4Y7Urv3ucz2drEBHMREjGZEZItg5SFhgHT0rIDPcldyEKAYLfeQLXnaejwjCogWTHUtXyNbWZy8vX153yJHIjBMhrFEwWSFB89IZ/Iy27/H/8SEvV+pnqaRDIL0DIFOrpMZZH0MVayAVVxpHD5uGwUzggcHHeeCGl2HFQKLdfANp4AV3iRrlSgt81iJwmFShiKWznUGl878uVhZ8/IPC2mnROMrQcZhlX7e+hFazVllcWs/Q8cgoJsQCfGwYEukKUOuIraHa+hVnFDcpGwRFIsa/fDQjkctk9AaJEnWaRxHu5RGl5NVvU7z86RiuVapED351zX0M6+QfMAiYJTxh7D2gSKecE5lP3u6nDhCdMvMhmgcRN+yk0u09gkvCE0KzEfZJQxyVt2BDhCbemVe6DhKnwBKO80F2SiCI8wTixdRckogpPMI4HVmlCxl7iNQ5xoRPk0Y+EX02FJ0QKaBi60Y5y8uIB+wTPNhIBKSUSqENc6LnrsB5ljDGBKgY4uGMKDnsDcaHnwoNHwZTpGGMC/pxbGPpILKC4g5BOjwZT4WNMO+LyUfWUEVgYXAyeFAKnYDrGmABlEdRH4rQAKkcF+72Q1myMcUfG1uM8gTSYIsGMN7JxWiXqCdTB2LXZ/g7j2gW8+H6DBD8zGkcWbsnHdi0Q5QQiwev+pipdmathdqFM7Ub7BwzMbw9Z1RLF+8b0JDIiYHICkabJFRgIju7AdVPkl1cX89h+1u5+Xa75P6k+YUT0STQ/B0ZWMFpCjAnMFY0/gSSmOnz02SnwoNwNCrvvN2FvOBGFbsgB+lJH2NxuB2vP0d/JUCLsgfsKHD46pz6JAsmJwBHYIAACPMZbIxbQglPAQW3MKe3f+FCclEFDEmWsikjkAJ3CIpLYIseNcqqYzhkQ0SdRIFMeGCCSK0GmJ2EpxKv6P/a0DnMvUev5lVx2xyS3SURwWW3TGHw8pDnqrc2+F9pbilFgGg94DuN/4T++amMRCfzf9yiAoIQCHcEUoLnJItjcep/9S9UCKb7pWy0UUeIBj0m+wxhbFBAcTiv4mPk3cP5Nmp85wf7SUvbYZNw7ekdcTaL/pK0AAAAASUVORK5CYII=" alt="star" class="w-32px"> <span
-                                    class="text-yellow ms-8 fs-16 text-starYellow fw-bolder fs-24">4.9</span>
-                            </div>
-                        </div>
-                        <div class="position-absolute end-0 top-0 z-1">
-                            <a href="#">
-                                <span
-                                    class="material-symbols-outlined p-8 bg-secondaryLight rounded-5 icons me-12 mt-12 me-md-24 mt-md-24">
-                                    favorite
-                                </span>
-                            </a>
-                        </div>
-                        <div
-                            class="position-absolute start-0 bottom-0 ms-12 mb-12 ms-md-24 mb-md-24 d-flex align-items-center z-1">
-                            <p class="fs-24 text-white my-auto">頁少爺</p>
-                            <div
-                                class="bg-blueLight rounded-5 d-flex align-items-center px-8 py-5 text-white ms-8 ms-md-16">
-                                <span class="material-icons"> male </span>
-                                <span class="ms-4">62</span>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="p-12 p-md-24">
-                        <p class="fs-24">NT$ 800</p>
-                        <section class="mt-12">
-                            <h4 class="mt-8">服務項目</h4>
-                            <p>伴遊、伴唱</p>
-                        </section>
-                        <div class="d-flex">
-                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-start-pill">
-                                加入購物車</a>
-                            <div class="vl border-1 border-start border-white"></div>
-                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-end-pill">
-                                下單</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
+        <ul class="mainUl list-unstyled mt-48 d-flex flex-wrap row row-cols-1 row-cols-lg-3 g-5 justify-content-center">
         </ul>
-</main>                <script>
+</main>
+<script>
+    const mainUl = document.querySelector('main ul');
+    function getCardList() {
+        axios.get(`${renderUrl}${cards}`).then(function (res) {
+            let data = res.data;
+            let str = ''
+            data.forEach(el => {
+                str +=`
+                <li class="card rounded-5 border-0 shadow col-auto p-0">
+                <div class="card-body m-0 p-0">
+                    <div class="imgArea position-relative">
+                        <img src="${el.imgUrl}" alt="product01">
+                        <div
+                            class="position-absolute start-0 top-0 ms-12 mt-12 ms-md-24 mt-md-24 d-flex align-items-center z-1">
+                            <div class="d-flex align-items-center ">
+                                <img src="${el.scoreImg}" alt="star" class="w-32px"> <span
+                                    class="text-yellow ms-8 fs-16 text-starYellow fw-bolder fs-24">${el.score}</span>
+                            </div>
+                        </div>
+                        <div class="position-absolute end-0 top-0 z-1">
+                            <a href="#">
+                                <span
+                                    class="material-symbols-outlined p-8 bg-secondaryLight rounded-5 icons me-12 mt-12 me-md-24 mt-md-24">
+                                    favorite
+                                </span>
+                            </a>
+                        </div>
+                        <div
+                            class="position-absolute start-0 bottom-0 ms-12 mb-12 ms-md-24 mb-md-24 d-flex align-items-center z-1">
+                            <p class="fs-24 text-white my-auto">${el.name}</p>
+                            <div
+                                class="${el.genderBgColor} rounded-5 d-flex align-items-center px-8 py-5 text-white ms-8 ms-md-16">
+                                <span class="material-icons"> ${el.gender} </span>
+                                <span class="ms-4">62</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-12 p-md-24">
+                        <p class="fs-24">NT$ ${el.price}</p>
+                        <section class="mt-12">
+                            <h4 class="mt-8">服務項目</h4>
+                            <p>${el.service}</p>
+                        </section>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-start-pill">
+                                加入購物車</a>
+                            <div class="vl border-1 border-start border-white"></div>
+                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-end-pill">
+                                下單</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+                `
+            });
+            mainUl.innerHTML = str;
+        })
+    }
+    getCardList();
+
+</script>                <script>
                     $(document).ready(function () {
                         $(".carousel-indicators .btn-carouselWeb:first-child").addClass(
                             "btn-carouselWebActive"
