@@ -20,6 +20,10 @@
     "score":4.9,
     "name":"賈金牌",
     "price":880,
-    "service":"公園下棋、帶小孩"
+    "service":"公園下棋、帶小孩",
+    "imgUrl":"https://hackmd.io/_uploads/SkzHMEQL6.png",
+    "scoreImg":"https://hackmd.io/_uploads/rk-OQBQU6.png",
+    "gender":"male",
+    "genderBgColor":"bg-blueLight"
   }]
 }
