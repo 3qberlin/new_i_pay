@@ -9,25 +9,40 @@
                     </span></p>
             </a>
         </section>
-        <ul class="mainUl list-unstyled mt-48 d-flex flex-wrap row row-cols-1 row-cols-lg-3 g-5 justify-content-center">
+        <ul
+            class="mainUl list-unstyled mt-48 d-flex flex-wrap flex-md-nowrap row row-cols-1 row-cols-lg-3 g-5 justify-content-start justify-content-lg-center flex-nowrap flex-lg-wrap overflow-auto pb-60">
         </ul>
 </main>
 <script>
     const mainUl = document.querySelector('main ul');
     function getCardList() {
-        axios.get(`${renderUrl}${cards}`).then(function (res) {
+        axios.get(`${Url}${cards}`).then(function (res) {
             let data = res.data;
+            console.log('data', data);
             let str = ''
-            data.forEach(el => {
-                str +=`
-                <li class="card rounded-5 border-0 shadow col-auto p-0">
+            let str2 = `
+            <li class="d-none d-lg-block">
+           <div class="mx-auto w-100 text-center"><img src="https://hackmd.io/_uploads/SJKCn_EU6.png" alt="favorite" width="200" height="161"></div>
+           <div class="mx-auto w-100 text-center"> <img src="https://hackmd.io/_uploads/Sk3AndN8T.png" alt="favorite" width="132" height="32" class="mt-16"></div>
+               
+                <a href="#" class="w-100">
+                <p class="d-flex align-items-center justify-content-center mt-24">看更多<span
+                        class="material-symbols-outlined my-auto">
+                        arrow_right
+                    </span></p>
+            </a>
+                </li>   `;
+            let ary = data.slice(0, 7);
+            ary.forEach(el => {
+                str += ` 
+                <li class="card rounded-5 border-0 shadow col-auto p-0 m-0 mx-12">
                 <div class="card-body m-0 p-0">
                     <div class="imgArea position-relative">
                         <img src="${el.imgUrl}" alt="product01">
                         <div
                             class="position-absolute start-0 top-0 ms-12 mt-12 ms-md-24 mt-md-24 d-flex align-items-center z-1">
                             <div class="d-flex align-items-center ">
-                                <img src="${el.scoreImg}" alt="star" class="w-32px"> <span
+                                <img src="${el.scoreImg}" alt="star"> <span
                                     class="text-yellow ms-8 fs-16 text-starYellow fw-bolder fs-24">${el.score}</span>
                             </div>
                         </div>
@@ -45,7 +60,7 @@
                             <div
                                 class="${el.genderBgColor} rounded-5 d-flex align-items-center px-8 py-5 text-white ms-8 ms-md-16">
                                 <span class="material-icons"> ${el.gender} </span>
-                                <span class="ms-4">62</span>
+                                <span class="ms-4">${el.age}</span>
 
                             </div>
                         </div>
@@ -68,9 +83,59 @@
             </li>
                 `
             });
-            mainUl.innerHTML = str;
+            let str3 = `
+            <li class="card rounded-5 border-0 shadow col-auto p-0">
+                <div class="card-body m-0 p-0">
+                    <div class="imgArea position-relative">
+                        <img src="${data[7].imgUrl}" alt="product01">
+                        <div
+                            class="position-absolute start-0 top-0 ms-12 mt-12 ms-md-24 mt-md-24 d-flex align-items-center z-1">
+                            <div class="d-flex align-items-center ">
+                                <img src="${data[7].scoreImg}" alt="star" class="w-32px"> <span
+                                    class="text-yellow ms-8 fs-16 text-starYellow fw-bolder fs-24">${data[7].score}</span>
+                            </div>
+                        </div>
+                        <div class="position-absolute end-0 top-0 z-1">
+                            <a href="#">
+                                <span
+                                    class="material-symbols-outlined p-8 bg-secondaryLight rounded-5 icons me-12 mt-12 me-md-24 mt-md-24">
+                                    favorite
+                                </span>
+                            </a>
+                        </div>
+                        <div
+                            class="position-absolute start-0 bottom-0 ms-12 mb-12 ms-md-24 mb-md-24 d-flex align-items-center z-1">
+                            <p class="fs-24 text-white my-auto">${data[7].name}</p>
+                            <div
+                                class="${data[7].genderBgColor} rounded-5 d-flex align-items-center px-8 py-5 text-white ms-8 ms-md-16">
+                                <span class="material-icons"> ${data[7].gender} </span>
+                                <span class="ms-4">${data[7].age}</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-12 p-md-24">
+                        <p class="fs-24">NT$ ${data[7].price}</p>
+                        <section class="mt-12">
+                            <h4 class="mt-8">服務項目</h4>
+                            <p>${data[7].service}</p>
+                        </section>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-start-pill">
+                                加入購物車</a>
+                            <div class="vl border-1 border-start border-white"></div>
+                            <a href="#" class="btn btn-light w-100 rounded-0 rounded-end-pill">
+                                下單</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            `
+            mainUl.innerHTML = (str + str2 + str3);
+            // mainUl.innerHTML = str;
         })
     }
     getCardList();
+
 
 </script>
