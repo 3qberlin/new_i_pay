@@ -222,7 +222,7 @@
 <script>
     const mainUl = document.querySelector('main ul');
     function getCardList() {
-        axios.get(`${localUrl}${cards}`).then(function (res) {
+        axios.get(`${Url}${cards}`).then(function (res) {
             let data = res.data;
             console.log('data', data);
             let str = ''
