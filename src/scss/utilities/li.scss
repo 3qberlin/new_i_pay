@@ -30,6 +30,7 @@ main ul li:nth-child(5),main ul li:nth-child(8){
 
 main ul li:nth-child(7),main ul li:nth-child(9){
     margin-bottom:240px !important;
+    height:auto;
     @include media-breakpoint-down(lg){
         margin-bottom:0 !important;
     }

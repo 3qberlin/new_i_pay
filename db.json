@@ -1,21 +1,36 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
   "comments": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "body": "謝謝「愛配」，陪玩師新竹風城女子，給我很多戀愛上的建議，成為我的戀愛顧問，在陪玩師的協助下，我用了她建議的方法攻陷了我現任女友的心，至於秘訣是什麼，全網唯一推薦「新竹風城女子」，快去下單問她吧！",
+      "whoCommented": "麵線",
+      "imgUrl":"https://hackmd.io/_uploads/SyooQ9OUT.png"
+    },
+    {
+      "id": 2,
+      "body": "音樂界的完美交友平台！我是音樂教師，透過i_pay認識了志同道合的音樂愛好者。網站提供的專業資料展示空間讓我展現我的音樂專長。真心感謝i_pay，讓我結識了那麼多優秀的音樂愛好者，強烈推薦！",
+      "whoCommented": "舒伯特",
+      "imgUrl":"https://hackmd.io/_uploads/S1AiX5OUa.png"
+    },
+    {
+      "id": 3,
+      "body": "無與倫比的交友體驗！作為一名攝影師，i_pay幫我展示了我的攝影作品，讓我與其他攝影愛好者互動交流。真誠感激網站提供的專業展示平台，讓我結識了這麼多有趣的靈魂，真正稱得上完美！",
+      "whoCommented": "哥倫布",
+      "imgUrl":"https://hackmd.io/_uploads/ryxhXc_8a.png"
+    },
+    {
+      "id": 4,
+      "body": "極致的交友服務！我是一名科技工程師，在i_pay找到了志同道合的技術愛好者。網站提供的專業展示空間讓我展示我的技術實力，結識了一群志同道合的朋友。推薦給所有尋找專業交友的人！",
+      "whoCommented": "工程頭頭",
+      "imgUrl":"https://hackmd.io/_uploads/SyooQ9OUT.png"
+    },
+    {
+      "id": 5,
+      "body": "最棒的交友平台！身為時尚設計師，i_pay讓我展示了自己的創作，並結識了許多熱愛時尚的朋友。網站提供了專業展示空間，讓我展現了自己的個性。強烈推薦給所有時尚愛好者！",
+      "whoCommented": "香奈鵝",
+      "imgUrl":"https://hackmd.io/_uploads/S1AiX5OUa.png"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  },
   "cards":[
     {
     "score":4.2,

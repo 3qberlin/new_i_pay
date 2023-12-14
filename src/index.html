@@ -16,6 +16,7 @@
         })();
     </script>
     <link rel="stylesheet" href="./scss/all.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -27,13 +28,16 @@
         const localUrl = "http://localhost:3000/";
         const Url = "https://new-i-pay.onrender.com/";
         const cards = "cards/";
+        const comments = "comments/";
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body>
     <%- include('./ejs/nav') -%>
         <%- include('./ejs/banner') -%>
             <%- include('./ejs/main') -%>
+
                 <script>
                     $(document).ready(function () {
                         $(".carousel-indicators .btn-carouselWeb:first-child").addClass(
