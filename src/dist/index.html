@@ -15,6 +15,7 @@
             document.getElementsByTagName("head")[0].appendChild(mf);
         })();
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -26,9 +27,11 @@
         const localUrl = "http://localhost:3000/";
         const Url = "https://new-i-pay.onrender.com/";
         const cards = "cards/";
+        const comments = "comments/";
     </script>
-  <script type="module" crossorigin src="/new_i_pay/assets/index-zXU-838d.js"></script>
-  <link rel="stylesheet" crossorigin href="/new_i_pay/assets/index-00lIyQ3z.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" crossorigin src="/new_i_pay/assets/index-abCX7pWj.js"></script>
+  <link rel="stylesheet" crossorigin href="/new_i_pay/assets/index-OufeXYIM.css">
 </head>
 
 <body>
@@ -214,8 +217,12 @@
   const navContent = document.querySelector('.navContent');
   console.log('navContent', navContent);
 
-</script>            <main>
-    <div class="container pt-120 pb-60">
+</script>            <style>
+
+</style>
+
+<main>
+    <div class="container pt-120 pb-60 pb-lg-0">
         <section class="text-center">
             <h2>開始約會</h2>
             <a href="#">
@@ -226,8 +233,22 @@
             </a>
         </section>
         <ul
-            class="mainUl list-unstyled mt-48 d-flex flex-wrap flex-md-nowrap row row-cols-1 row-cols-lg-3 g-5 justify-content-start justify-content-lg-center flex-nowrap flex-lg-wrap overflow-auto pb-60">
+            class="mainUl list-unstyled mt-48 d-flex flex-wrap flex-md-nowrap row row-cols-1 row-cols-lg-3 g-5 justify-content-start justify-content-lg-center flex-nowrap flex-lg-wrap overflow-auto pb-60 pb-lg-0">
         </ul>
+    </div>
+    <div class="container mt-48 mt-lg-n120  pb-48">
+        <h2 class="text-center d-flex flex-wrap justify-content-center"><span class="w-100">服務好評</span>
+            <p class="border border-2 d-inline-block mt-12 border-60px border-dark"></p>
+        </h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
 </main>
 <script>
     const mainUl = document.querySelector('main ul');
@@ -355,8 +376,67 @@
     }
     getCardList();
 
+    const swiperWrapper = document.querySelector('.swiper-wrapper');
 
-</script>                <script>
+    function getComments() {
+        axios.get(`${Url}${comments}`).then((res) => {
+            let data = res.data;
+            console.log('data', data);
+            let template = data.map(item => `
+            <div class="swiper-slide">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <div class="card-title">
+                                <img src="${item.imgUrl}">
+                            </div>
+                            <div class="card-content mt-16 flex-grow-1">
+                                ${item.body}
+                            </div>
+                            <hr class="border border-1 border-secondaryDark">
+                            <p>
+                                網友 - ${item.whoCommented}
+                            </p>
+                        </div>
+                    </div>
+                </div>            
+            `).join('');
+            swiperWrapper.innerHTML = template;
+        })
+    }
+    getComments();
+    const swiper = new Swiper('.swiper', {
+
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        // // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 2
+            },
+            768: {
+                slidesPerView: 3
+            }
+        },
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    });
+</script>
+                <script>
                     $(document).ready(function () {
                         $(".carousel-indicators .btn-carouselWeb:first-child").addClass(
                             "btn-carouselWebActive"

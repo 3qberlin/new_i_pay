@@ -152,7 +152,6 @@
             </li>
             `
             mainUl.innerHTML = (str + str2 + str3);
-            // mainUl.innerHTML = str;
         })
     }
     getCardList();
@@ -182,38 +181,43 @@
                 </div>            
             `).join('');
             swiperWrapper.innerHTML = template;
+            const swiper = new Swiper('.swiper', {
+
+                slidesPerView: 1,
+                spaceBetween: 10,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                // // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2
+                    },
+                    768: {
+                        slidesPerView: 3
+                    }
+                },
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            });
+        }).catch((error) => {
+            console.log(error)
         })
     }
-    getComments();
-    const swiper = new Swiper('.swiper', {
-
-        slidesPerView: 1,
-        spaceBetween: 10,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        // // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
-        breakpoints: {
-            576: {
-                slidesPerView: 2
-            },
-            768: {
-                slidesPerView: 3
-            }
-        },
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
+    document.addEventListener('DOMContentLoaded', function () {
+        getComments();
     });
+
 </script>
