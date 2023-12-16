@@ -28,7 +28,7 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        const localUrl = "http://localhost:3000/";
+        // const Url = "http://localhost:3000/";
         const Url = "https://new-i-pay.onrender.com/";
         const cards = "cards/";
         const comments = "comments/";
@@ -45,43 +45,44 @@
                 <%- include('./ejs/comment') -%>
                     <%- include('./ejs/apply') -%>
                         <%- include('./ejs/customerFeedback') -%>
+                            <%- include('./ejs/footer') -%>
 
-                            <script>
-                                $(document).ready(function () {
-                                    $(".carousel-indicators .btn-carouselWeb:first-child").addClass(
-                                        "btn-carouselWebActive"
-                                    );
-
-                                    $("#carouselWeb").on("slide.bs.carousel", function (event) {
-                                        $(".carousel-indicators .btn-carouselWeb").removeClass(
+                                <script>
+                                    $(document).ready(function () {
+                                        $(".carousel-indicators .btn-carouselWeb:first-child").addClass(
                                             "btn-carouselWebActive"
                                         );
-                                        $(
-                                            '.carousel-indicators .btn-carouselWeb[data-bs-slide-to="' +
-                                            event.to +
-                                            '"]'
-                                        ).addClass("btn-carouselWebActive");
-                                    });
 
-                                    $(".carousel-indicators .btn-carouselMob:first-child").addClass(
-                                        "btn-carouselMobActive"
-                                    );
+                                        $("#carouselWeb").on("slide.bs.carousel", function (event) {
+                                            $(".carousel-indicators .btn-carouselWeb").removeClass(
+                                                "btn-carouselWebActive"
+                                            );
+                                            $(
+                                                '.carousel-indicators .btn-carouselWeb[data-bs-slide-to="' +
+                                                event.to +
+                                                '"]'
+                                            ).addClass("btn-carouselWebActive");
+                                        });
 
-                                    $("#carouselMobile").on("slide.bs.carousel", function (event) {
-                                        $(".carousel-indicators .btn-carouselMob").removeClass(
+                                        $(".carousel-indicators .btn-carouselMob:first-child").addClass(
                                             "btn-carouselMobActive"
                                         );
-                                        $(
-                                            '.carousel-indicators .btn-carouselMob[data-bs-slide-to="' +
-                                            event.to +
-                                            '"]'
-                                        ).addClass("btn-carouselMobActive");
+
+                                        $("#carouselMobile").on("slide.bs.carousel", function (event) {
+                                            $(".carousel-indicators .btn-carouselMob").removeClass(
+                                                "btn-carouselMobActive"
+                                            );
+                                            $(
+                                                '.carousel-indicators .btn-carouselMob[data-bs-slide-to="' +
+                                                event.to +
+                                                '"]'
+                                            ).addClass("btn-carouselMobActive");
+                                        });
                                     });
-                                });
 
 
-                            </script>
-                            <script type="module" src="js/main.js"></script>
+                                </script>
+                                <script type="module" src="js/main.js"></script>
 
 </body>
 

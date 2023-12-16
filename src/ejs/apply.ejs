@@ -12,7 +12,7 @@
     const applyArea = document.querySelector('.apply .row');
 
     function getApply() {
-        axios.get(`${localUrl}${apply}`).then((res) => {
+        axios.get(`${Url}${apply}`).then((res) => {
             let data = res.data;
             let template = data.map(item =>
                 `

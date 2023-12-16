@@ -1,7 +1,3 @@
-<style>
-
-</style>
-
 <main>
     <div class="container pt-120 pb-60 pb-lg-0">
         <section class="text-center">
@@ -17,12 +13,11 @@
             class="mainUl list-unstyled mt-48 d-flex flex-wrap flex-md-nowrap row row-cols-1 row-cols-lg-3 g-5 justify-content-start justify-content-lg-center flex-nowrap flex-lg-wrap overflow-auto pb-60 pb-lg-0">
         </ul>
     </div>
-
 </main>
 <script>
     const mainUlArea = document.querySelector('main ul');
     function getCardList() {
-        axios.get(`${localUrl}${cards}`).then(function (res) {
+        axios.get(`${Url}${cards}`).then(function (res) {
             let data = res.data;
             let str = ''
             let str2 = `

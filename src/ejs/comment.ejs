@@ -16,7 +16,7 @@
     const swiperWrapperArea = document.querySelector('.swiper-wrapper');
 
     function getComments() {
-        axios.get(`${localUrl}${comments}`).then((res) => {
+        axios.get(`${Url}${comments}`).then((res) => {
             let data = res.data;
             let template = data.map(item => `
         <div class="swiper-slide">

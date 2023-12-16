@@ -1,4 +1,4 @@
-<div class="customerFeedback container-fliudposition-relative">
+<div class="customerFeedback container-fliudposition-relative mb-32 mb-lg-120">
     <div class="container d-flex justify-content-center position-relative">
         <div class="w-75 text-center position-relative border mx-24 mx-lg-0 bg-white rounded-3">
             <img src="https://hackmd.io/_uploads/HJNgR59L6.png" alt="talk"
@@ -6,7 +6,7 @@
             <div class="bg-white mt-36 mt-md-72 d-flex flex-wrap justify-content-center">
                 <ul class="list-unstyled d-flex flex-wrap flex-lg-nowrap w-100 mt-36 mt-lg-72">
                 </ul>
-                <button class="btn btn-main py-24 px-120 text-white fs-5 my-36 my-lg-72">成為陪玩師</button>
+                <button class="btn btn-main py-24 px-120 text-white fs-5 my-36 my-lg-72 mb-24 mb-lg-40">成為陪玩師</button>
             </div>
         </div>
     </div>
@@ -15,7 +15,7 @@
     const customerFeedbackArea = document.querySelector('.customerFeedback .container ul');
 
     function getCustomerFeedback() {
-        axios.get(`${localUrl}${customerFeedback}`).then((res) => {
+        axios.get(`${Url}${customerFeedback}`).then((res) => {
             console.log('res',res);
             let data = res.data;
             let template = data.map( item =>

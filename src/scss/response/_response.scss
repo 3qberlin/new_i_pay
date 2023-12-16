@@ -34,3 +34,12 @@ main ul li {
         top: 0;
     }
 }
+
+
+.footerImgGroup {
+    width: auto;
+
+    @include media-breakpoint-down(lg) {
+        width: 100%;
+    }
+}
