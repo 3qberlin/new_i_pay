@@ -1,7 +1,16 @@
-main ul li{
-    width:30% !important;
+main ul li {
+    width: 30% !important;
     margin: 12px !important;
+
     @include media-breakpoint-down(lg) {
-       width: auto !important;
+        width: auto !important;
+    }
+}
+
+.comment {
+    margin-top: 1700px !important;
+
+    @include media-breakpoint-down(lg) {
+        margin-top: 0px !important;
     }
 }

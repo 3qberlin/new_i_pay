@@ -1,0 +1,74 @@
+<div class="comment container mt-48 mt-lg-n120  pb-48">
+    <h2 class="text-center d-flex flex-wrap justify-content-center">
+        <p class="w-100 p-0">服務好評</p>
+        <span class="border border-1 d-inline-block border-60px border-dark"></span>
+    </h2>
+    <div class="swiper mt-48">
+        <div class="swiper-wrapper">
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+<script>
+    const swiperWrapper = document.querySelector('.swiper-wrapper');
+
+    function getComments() {
+        axios.get(`${localUrl}${comments}`).then((res) => {
+            let data = res.data;
+            console.log('data', data);
+            let template = data.map(item => `
+        <div class="swiper-slide">
+                <div class="card h-100" style="z-index:0 !important;">
+                    <div class="card-body d-flex flex-column">
+                        <div class="card-title">
+                            <img src="${item.imgUrl}">
+                        </div>
+                        <div class="card-content mt-16 flex-grow-1">
+                            ${item.body}
+                        </div>
+                        <hr class="border border-1 border-secondaryDark">
+                        <p>
+                            網友 - ${item.whoCommented}
+                        </p>
+                    </div>
+                </div>
+            </div>            
+        `).join('');
+            swiperWrapper.innerHTML = template;
+            const swiper = new Swiper('.swiper', {
+
+                slidesPerView: 1,
+                spaceBetween: 10,
+
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2
+                    },
+                    768: {
+                        slidesPerView: 3
+                    }
+                },
+
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            });
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        getComments();
+    });
+</script>
