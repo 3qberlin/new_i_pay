@@ -35,7 +35,6 @@
   navButton.addEventListener('click', (e) => {
     e.preventDefault();
     if (navContent) {
-      console.log('save');
       navContent.classList.toggle('d-block');
     }
   });
@@ -50,19 +49,4 @@
 
     }
   })
-
-  // const menuBtn = document.querySelector('.navbar button');
-  // const menuBtnSpan = document.querySelector('.navbar button span');
-  // const newId = document.querySelector('#new');
-
-  // menuBtn.addEventListener('click', () => {
-  //   if (menuBtnSpan.innerText === 'menu') {
-  //     menuBtnSpan.innerText = 'close';
-  //     newId.classList.remove('show'); // 移除 'show' class
-  //   } else if (menuBtnSpan.innerText === 'close') {
-  //     menuBtnSpan.innerText = 'menu';
-  //     newId.classList.add('show'); // 添加 'show' class
-  //   }
-  // });
-
 </script>

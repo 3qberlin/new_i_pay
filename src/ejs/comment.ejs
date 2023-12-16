@@ -13,7 +13,7 @@
     </div>
 </div>
 <script>
-    const swiperWrapper = document.querySelector('.swiper-wrapper');
+    const swiperWrapperArea = document.querySelector('.swiper-wrapper');
 
     function getComments() {
         axios.get(`${localUrl}${comments}`).then((res) => {
@@ -36,7 +36,7 @@
                 </div>
             </div>            
         `).join('');
-            swiperWrapper.innerHTML = template;
+            swiperWrapperArea.innerHTML = template;
             const swiper = new Swiper('.swiper', {
 
                 slidesPerView: 1,

@@ -20,11 +20,10 @@
 
 </main>
 <script>
-    const mainUl = document.querySelector('main ul');
+    const mainUlArea = document.querySelector('main ul');
     function getCardList() {
         axios.get(`${localUrl}${cards}`).then(function (res) {
             let data = res.data;
-            console.log('data', data);
             let str = ''
             let str2 = `
             <li class="d-none d-lg-block">
@@ -139,7 +138,7 @@
                 </div>
             </li>
             `
-            mainUl.innerHTML = (str + str2 + str3);
+            mainUlArea.innerHTML = (str + str2 + str3);
         })
     }
     getCardList();

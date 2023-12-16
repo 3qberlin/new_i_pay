@@ -14,3 +14,23 @@ main ul li {
         margin-top: 0px !important;
     }
 }
+
+.customerFeedback>div>div {
+    @include media-breakpoint-down(lg) {
+        width: 100% !important;
+    }
+}
+
+.customerFeedback img {
+    @include media-breakpoint-down(lg) {
+        translate: 50%;
+    }
+}
+
+.customerFeedback .container {
+    top: -48px;
+
+    @include media-breakpoint-down(lg) {
+        top: 0;
+    }
+}

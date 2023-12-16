@@ -33,6 +33,7 @@
         const cards = "cards/";
         const comments = "comments/";
         const apply = "apply/";
+        const customerFeedback = "customerFeedback/";
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
@@ -43,43 +44,44 @@
             <%- include('./ejs/main') -%>
                 <%- include('./ejs/comment') -%>
                     <%- include('./ejs/apply') -%>
+                        <%- include('./ejs/customerFeedback') -%>
 
-                        <script>
-                            $(document).ready(function () {
-                                $(".carousel-indicators .btn-carouselWeb:first-child").addClass(
-                                    "btn-carouselWebActive"
-                                );
-
-                                $("#carouselWeb").on("slide.bs.carousel", function (event) {
-                                    $(".carousel-indicators .btn-carouselWeb").removeClass(
+                            <script>
+                                $(document).ready(function () {
+                                    $(".carousel-indicators .btn-carouselWeb:first-child").addClass(
                                         "btn-carouselWebActive"
                                     );
-                                    $(
-                                        '.carousel-indicators .btn-carouselWeb[data-bs-slide-to="' +
-                                        event.to +
-                                        '"]'
-                                    ).addClass("btn-carouselWebActive");
-                                });
 
-                                $(".carousel-indicators .btn-carouselMob:first-child").addClass(
-                                    "btn-carouselMobActive"
-                                );
+                                    $("#carouselWeb").on("slide.bs.carousel", function (event) {
+                                        $(".carousel-indicators .btn-carouselWeb").removeClass(
+                                            "btn-carouselWebActive"
+                                        );
+                                        $(
+                                            '.carousel-indicators .btn-carouselWeb[data-bs-slide-to="' +
+                                            event.to +
+                                            '"]'
+                                        ).addClass("btn-carouselWebActive");
+                                    });
 
-                                $("#carouselMobile").on("slide.bs.carousel", function (event) {
-                                    $(".carousel-indicators .btn-carouselMob").removeClass(
+                                    $(".carousel-indicators .btn-carouselMob:first-child").addClass(
                                         "btn-carouselMobActive"
                                     );
-                                    $(
-                                        '.carousel-indicators .btn-carouselMob[data-bs-slide-to="' +
-                                        event.to +
-                                        '"]'
-                                    ).addClass("btn-carouselMobActive");
+
+                                    $("#carouselMobile").on("slide.bs.carousel", function (event) {
+                                        $(".carousel-indicators .btn-carouselMob").removeClass(
+                                            "btn-carouselMobActive"
+                                        );
+                                        $(
+                                            '.carousel-indicators .btn-carouselMob[data-bs-slide-to="' +
+                                            event.to +
+                                            '"]'
+                                        ).addClass("btn-carouselMobActive");
+                                    });
                                 });
-                            });
 
 
-                        </script>
-                        <script type="module" src="js/main.js"></script>
+                            </script>
+                            <script type="module" src="js/main.js"></script>
 
 </body>
 

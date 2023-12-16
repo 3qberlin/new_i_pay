@@ -1,0 +1,35 @@
+<div class="customerFeedback container-fliudposition-relative">
+    <div class="container d-flex justify-content-center position-relative">
+        <div class="w-75 text-center position-relative border mx-24 mx-lg-0 bg-white rounded-3">
+            <img src="https://hackmd.io/_uploads/HJNgR59L6.png" alt="talk"
+                class="position-absolute top-0 start-0 translate-middle">
+            <div class="bg-white mt-36 mt-md-72 d-flex flex-wrap justify-content-center">
+                <ul class="list-unstyled d-flex flex-wrap flex-lg-nowrap w-100 mt-36 mt-lg-72">
+                </ul>
+                <button class="btn btn-main py-24 px-120 text-white fs-5 my-36 my-lg-72">成為陪玩師</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const customerFeedbackArea = document.querySelector('.customerFeedback .container ul');
+
+    function getCustomerFeedback() {
+        axios.get(`${localUrl}${customerFeedback}`).then((res) => {
+            console.log('res',res);
+            let data = res.data;
+            let template = data.map( item =>
+            `
+                <ul class="list-unstyled d-flex flex-wrap flex-lg-nowrap w-100 mt-36 ">
+                    <li class="w-100 w-lg-50 px-24">
+                        <h3 class="my-40">${item.customer}</h3>
+                        <p>${item.comment}</p>
+                    </li>
+                </ul>
+            `
+            ).join('')
+            customerFeedbackArea.innerHTML = template;
+        })
+    }
+    getCustomerFeedback();
+</script>
