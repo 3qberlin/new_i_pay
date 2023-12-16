@@ -43,3 +43,9 @@ main ul li {
         width: 100%;
     }
 }
+
+.apply .card{
+    @include media-breakpoint-down(lg){
+        width: 80% !important;
+    }
+}

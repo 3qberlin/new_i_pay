@@ -4,7 +4,7 @@
             <p class="w-100 p-0">陪玩師招募</p>
             <span class="border border-1 d-inline-block border-60px border-dark"></span>
         </h2>
-        <div class="row gx-5 col-rows-1 col-rows-lg-3 mt-48">
+        <div class="row col-rows-1 col-rows-lg-3 mt-48 d-flex justify-content-center flex-wrap flex-xxl-nowrap">
         </div>
     </div>
 </div>
@@ -16,7 +16,7 @@
             let data = res.data;
             let template = data.map(item =>
                 `
-            <div class="card col-auto flex-grow-1 mt-24 mx-24">
+            <div class="card col-auto mt-24 mx-0 mx-lg-24 p-12">
                 <div class="card-body position-relative text-center">
                     <img src="${item.imgUrl}" alt="tips" class="img-fluid mt-24 mt-lg-32">
                 </div>

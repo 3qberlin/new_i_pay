@@ -23,15 +23,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"
         integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        const Url = "http://localhost:3000/";
+        // const Url = "http://localhost:3000/";
         const Url = "https://new-i-pay.onrender.com/";
         const cards = "cards/";
         const comments = "comments/";
+        const apply = "apply/";
+        const customerFeedback = "customerFeedback/";
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script type="module" crossorigin src="/new_i_pay/assets/index-abCX7pWj.js"></script>
-  <link rel="stylesheet" crossorigin href="/new_i_pay/assets/index-OufeXYIM.css">
+  <script type="module" crossorigin src="/new_i_pay/assets/index-jfSbUswP.js"></script>
+  <link rel="stylesheet" crossorigin href="/new_i_pay/assets/index-kzLUgzGc.css">
 </head>
 
 <body>
@@ -57,7 +62,7 @@
         <a href="#" class="hover"><span class="material-icons p-lg-12 ms-lg-12"> person </span></a>
       </li>
       <li class="d-block d-lg-none">
-        <button class="p-8 border-0 bgNone" type="button">
+        <button class="p-8 pe-20 border-0 bgNone" type="button">
           <span class="material-icons p-8 ms-auto">menu
           </span>
         </button>
@@ -72,7 +77,6 @@
   navButton.addEventListener('click', (e) => {
     e.preventDefault();
     if (navContent) {
-      console.log('save');
       navContent.classList.toggle('d-block');
     }
   });
@@ -87,21 +91,6 @@
 
     }
   })
-
-  // const menuBtn = document.querySelector('.navbar button');
-  // const menuBtnSpan = document.querySelector('.navbar button span');
-  // const newId = document.querySelector('#new');
-
-  // menuBtn.addEventListener('click', () => {
-  //   if (menuBtnSpan.innerText === 'menu') {
-  //     menuBtnSpan.innerText = 'close';
-  //     newId.classList.remove('show'); // 移除 'show' class
-  //   } else if (menuBtnSpan.innerText === 'close') {
-  //     menuBtnSpan.innerText = 'menu';
-  //     newId.classList.add('show'); // 添加 'show' class
-  //   }
-  // });
-
 </script>        <!-- web -->
 <div id="carouselWeb" class="carousel slide carousel-fade d-none d-lg-block" data-bs-ride="carousel">
   <div class="carousel-indicators mb-32">
@@ -210,18 +199,11 @@
             class="material-icons me-8"> person </span>個人主頁</a>
       </li>
     </ul>
-
   </div>
 </div>
 <script>
   const navContent = document.querySelector('.navContent');
-  console.log('navContent', navContent);
-
-</script>            <style>
-
-</style>
-
-<main>
+</script>            <main>
     <div class="container pt-120 pb-60 pb-lg-0">
         <section class="text-center">
             <h2>開始約會</h2>
@@ -236,26 +218,12 @@
             class="mainUl list-unstyled mt-48 d-flex flex-wrap flex-md-nowrap row row-cols-1 row-cols-lg-3 g-5 justify-content-start justify-content-lg-center flex-nowrap flex-lg-wrap overflow-auto pb-60 pb-lg-0">
         </ul>
     </div>
-    <div class="container mt-48 mt-lg-n120  pb-48">
-        <h2 class="text-center d-flex flex-wrap justify-content-center"><span class="w-100">服務好評</span>
-            <p class="border border-2 d-inline-block mt-12 border-60px border-dark"></p>
-        </h2>
-        <div class="swiper">
-            <div class="swiper-wrapper">
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-scrollbar"></div>
-        </div>
-    </div>
 </main>
 <script>
-    const mainUl = document.querySelector('main ul');
+    const mainUlArea = document.querySelector('main ul');
     function getCardList() {
         axios.get(`${Url}${cards}`).then(function (res) {
             let data = res.data;
-            console.log('data', data);
             let str = ''
             let str2 = `
             <li class="d-none d-lg-block">
@@ -370,45 +338,54 @@
                 </div>
             </li>
             `
-            mainUl.innerHTML = (str + str2 + str3);
+            mainUlArea.innerHTML = (str + str2 + str3);
         })
     }
     getCardList();
-
-    const swiperWrapper = document.querySelector('.swiper-wrapper');
+</script>                <div class="comment container mt-48 mt-lg-n120  pb-48">
+    <h2 class="text-center d-flex flex-wrap justify-content-center">
+        <p class="w-100 p-0">服務好評</p>
+        <span class="border border-1 d-inline-block border-60px border-dark"></span>
+    </h2>
+    <div class="swiper mt-48">
+        <div class="swiper-wrapper">
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+<script>
+    const swiperWrapperArea = document.querySelector('.swiper-wrapper');
 
     function getComments() {
         axios.get(`${Url}${comments}`).then((res) => {
             let data = res.data;
-            console.log('data', data);
             let template = data.map(item => `
-            <div class="swiper-slide">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <div class="card-title">
-                                <img src="${item.imgUrl}">
-                            </div>
-                            <div class="card-content mt-16 flex-grow-1">
-                                ${item.body}
-                            </div>
-                            <hr class="border border-1 border-secondaryDark">
-                            <p>
-                                網友 - ${item.whoCommented}
-                            </p>
+        <div class="swiper-slide">
+                <div class="card h-100" style="z-index:0 !important;">
+                    <div class="card-body d-flex flex-column">
+                        <div class="card-title">
+                            <img src="${item.imgUrl}">
                         </div>
+                        <div class="card-content mt-16 flex-grow-1">
+                            ${item.body}
+                        </div>
+                        <hr class="border border-1 border-secondaryDark">
+                        <p>
+                            網友 - ${item.whoCommented}
+                        </p>
                     </div>
-                </div>            
-            `).join('');
-            swiperWrapper.innerHTML = template;
+                </div>
+            </div>            
+        `).join('');
+            swiperWrapperArea.innerHTML = template;
             const swiper = new Swiper('.swiper', {
 
                 slidesPerView: 1,
                 spaceBetween: 10,
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                },
-                // // If we need pagination
+
                 pagination: {
                     el: '.swiper-pagination',
                 },
@@ -420,13 +397,12 @@
                         slidesPerView: 3
                     }
                 },
-                // Navigation arrows
+
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
 
-                // And if we need scrollbar
                 scrollbar: {
                     el: '.swiper-scrollbar',
                 },
@@ -438,43 +414,140 @@
     document.addEventListener('DOMContentLoaded', function () {
         getComments();
     });
+</script>                    <div class="apply bg-secondaryLight">
+    <div class="container mt-48 pb-120">
+        <h2 class="text-center d-flex flex-wrap justify-content-center pt-120">
+            <p class="w-100 p-0">陪玩師招募</p>
+            <span class="border border-1 d-inline-block border-60px border-dark"></span>
+        </h2>
+        <div class="row gx-5 col-rows-1 col-rows-lg-3 mt-48">
+        </div>
+    </div>
+</div>
+<script>
+    const applyArea = document.querySelector('.apply .row');
 
-</script>
-                <script>
-                    $(document).ready(function () {
-                        $(".carousel-indicators .btn-carouselWeb:first-child").addClass(
-                            "btn-carouselWebActive"
-                        );
+    function getApply() {
+        axios.get(`${Url}${apply}`).then((res) => {
+            let data = res.data;
+            let template = data.map(item =>
+                `
+            <div class="card col-auto flex-grow-1 mt-24 mx-24">
+                <div class="card-body position-relative text-center">
+                    <img src="${item.imgUrl}" alt="tips" class="img-fluid mt-24 mt-lg-32">
+                </div>
+                <div
+                    class="card-title position-absolute start-50 top-0 rounded-5 py-8 px-24 bg-secondaryLight border border-1 border-gray translate-middle shadow">
+                    ${item.title}
+                </div>
+                <p class="position-absolute top-50 start-50 translate-middle fs-4 text-white">${item.bodyContent}</p>
+                <div class="card-footer border-top-0 text-center bg-white mt-12 fs-5">
+                    <p>${item.footContent}</p>
+                </div>
+            </div>
+            `
+            ).join('');
+            applyArea.innerHTML = template;
+        })
+    }
+    getApply();
+</script>                        <div class="customerFeedback container-fliudposition-relative mb-32 mb-lg-120">
+    <div class="container d-flex justify-content-center position-relative">
+        <div class="w-75 text-center position-relative border mx-24 mx-lg-0 bg-white rounded-3">
+            <img src="https://hackmd.io/_uploads/HJNgR59L6.png" alt="talk"
+                class="position-absolute top-0 start-0 translate-middle">
+            <div class="bg-white mt-36 mt-md-72 d-flex flex-wrap justify-content-center">
+                <ul class="list-unstyled d-flex flex-wrap flex-lg-nowrap w-100 mt-36 mt-lg-72">
+                </ul>
+                <button class="btn btn-main py-24 px-120 text-white fs-5 my-36 my-lg-72 mb-24 mb-lg-40">成為陪玩師</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const customerFeedbackArea = document.querySelector('.customerFeedback .container ul');
 
-                        $("#carouselWeb").on("slide.bs.carousel", function (event) {
-                            $(".carousel-indicators .btn-carouselWeb").removeClass(
-                                "btn-carouselWebActive"
-                            );
-                            $(
-                                '.carousel-indicators .btn-carouselWeb[data-bs-slide-to="' +
-                                event.to +
-                                '"]'
-                            ).addClass("btn-carouselWebActive");
-                        });
+    function getCustomerFeedback() {
+        axios.get(`${Url}${customerFeedback}`).then((res) => {
+            console.log('res',res);
+            let data = res.data;
+            let template = data.map( item =>
+            `
+                <ul class="list-unstyled d-flex flex-wrap flex-lg-nowrap w-100 mt-36 ">
+                    <li class="w-100 w-lg-50 px-24">
+                        <h3 class="my-40">${item.customer}</h3>
+                        <p>${item.comment}</p>
+                    </li>
+                </ul>
+            `
+            ).join('')
+            customerFeedbackArea.innerHTML = template;
+        })
+    }
+    getCustomerFeedback();
+</script>                            <footer class="border border-top border-1 border-gray6 bg-mbBg">
+    <div class="container">
+        <div class="mt-48 mb-15 d-flex justify-content-center justify-content-lg-start">
+            <a href="#"><img src="data:image/png;base64,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" alt="logo" /></a>
+        </div>
+        <div class="d-flex justify-content-center flex-wrap justify-content-lg-between">
+            <div>
+                <ul class="d-flex list-unstyled flex-column flex-lg-row align-items-center">
+                    <li class="py-12 text-gray1"><a href="#">服務條款</a></li>
+                    <li class="py-12 text-gray1 ms-0 ms-lg-72"><a href="#">隱私權政策</a></li>
+                    <li class="py-12 text-gray1 ms-0 ms-lg-72"><a href="#">交友安全聲明</a></li>
+                </ul>
+            </div>
+            <div class="d-flex footerImgGroup justify-content-center justify-content-lg-start mb-24 mb-lg-0">
+                <a href="#">
+                    <img src="/new_i_pay/assets/app_store-Fn0n0deV.png" alt="appleStore" width="127" height="45" />
+                </a>
+                <a href="#">
+                    <img src="/new_i_pay/assets/google_play-NKaZIjTw.png" alt="googlePlay" width="127" height="45"
+                        class="ms-24" />
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="container-fluid bg-secondaryDark">
+    <h6 class="text-center text-gray6 py-16 fs-12 m-0">CopyRight by Berlin</h6>
+</div>
+                                <script>
+                                    $(document).ready(function () {
+                                        $(".carousel-indicators .btn-carouselWeb:first-child").addClass(
+                                            "btn-carouselWebActive"
+                                        );
 
-                        $(".carousel-indicators .btn-carouselMob:first-child").addClass(
-                            "btn-carouselMobActive"
-                        );
+                                        $("#carouselWeb").on("slide.bs.carousel", function (event) {
+                                            $(".carousel-indicators .btn-carouselWeb").removeClass(
+                                                "btn-carouselWebActive"
+                                            );
+                                            $(
+                                                '.carousel-indicators .btn-carouselWeb[data-bs-slide-to="' +
+                                                event.to +
+                                                '"]'
+                                            ).addClass("btn-carouselWebActive");
+                                        });
 
-                        $("#carouselMobile").on("slide.bs.carousel", function (event) {
-                            $(".carousel-indicators .btn-carouselMob").removeClass(
-                                "btn-carouselMobActive"
-                            );
-                            $(
-                                '.carousel-indicators .btn-carouselMob[data-bs-slide-to="' +
-                                event.to +
-                                '"]'
-                            ).addClass("btn-carouselMobActive");
-                        });
-                    });
+                                        $(".carousel-indicators .btn-carouselMob:first-child").addClass(
+                                            "btn-carouselMobActive"
+                                        );
+
+                                        $("#carouselMobile").on("slide.bs.carousel", function (event) {
+                                            $(".carousel-indicators .btn-carouselMob").removeClass(
+                                                "btn-carouselMobActive"
+                                            );
+                                            $(
+                                                '.carousel-indicators .btn-carouselMob[data-bs-slide-to="' +
+                                                event.to +
+                                                '"]'
+                                            ).addClass("btn-carouselMobActive");
+                                        });
+                                    });
 
 
-                </script>
+                                </script>
 
 </body>
 
