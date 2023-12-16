@@ -4,4 +4,76 @@
             <p class="w-100 p-0">陪玩師招募</p>
             <span class="border border-1 d-inline-block border-60px border-dark"></span>
         </h2>
+        <div class="row gx-5 col-rows-1 col-rows-lg-3 mt-48">
+            <div class="card col-auto flex-grow-1 m-12">
+                <div class="card-body position-relative">
+                    <img src="../images/mobile/decoration/t01.png" alt="">
+                </div>
+                <div
+                    class="card-title position-absolute start-50 top-0 rounded-5 py-8 px-24 bg-secondaryLight border border-1 border-gray translate-middle shadow">
+                    資格
+                </div>
+                <p class="position-absolute top-50 start-50 translate-middle">無經驗可</p>
+                <div class="card-footer border-top-0 text-center bg-white mt-24 mt-lg-32">
+                    <p>新手小白都接受</p>
+                </div>
+            </div>
+            <div class="card col-auto flex-grow-1 m-12">
+                <div class="card-body position-relative">
+                    <img src="../images/mobile/decoration/t01.png" alt="">
+                </div>
+                <div
+                    class="card-title position-absolute start-50 top-0 rounded-5 py-8 px-24 bg-secondaryLight border border-1 border-gray translate-middle shadow">
+                    資格
+                </div>
+                <p class="position-absolute top-50 start-50 translate-middle">無經驗可</p>
+                <div class="card-footer border-top-0 text-center bg-white">
+                    <p>新手小白都接受</p>
+                </div>
+            </div>
+            <div class="card col-auto flex-grow-1 m-12">
+                <div class="card-body position-relative">
+                    <img src="../images/mobile/decoration/t01.png" alt="">
+                </div>
+                <div
+                    class="card-title position-absolute start-50 top-0 rounded-5 py-8 px-24 bg-secondaryLight border border-1 border-gray translate-middle shadow">
+                    資格
+                </div>
+                <p class="position-absolute top-50 start-50 translate-middle">無經驗可</p>
+                <div class="card-footer border-top-0 text-center bg-white">
+                    <p>新手小白都接受</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 </div>
+<script>
+    const applyArea = document.querySelector('.apply .row');
+
+    function renderApply() {
+        axios.get(`${localUrl}${apply}`).then((res) => {
+            let data = res.data;
+            let template = data.map(item =>
+                `
+            <div class="card col-auto flex-grow-1 m-12">
+                <div class="card-body position-relative text-center">
+                    <img src="${item.imgUrl}" alt="tips" class="img-fluid mt-24 mt-lg-32">
+                </div>
+                <div
+                    class="card-title position-absolute start-50 top-0 rounded-5 py-8 px-24 bg-secondaryLight border border-1 border-gray translate-middle shadow">
+                    ${item.title}
+                </div>
+                <p class="position-absolute top-50 start-50 translate-middle fs-4 text-white">${item.bodyContent}</p>
+                <div class="card-footer border-top-0 text-center bg-white mt-12 fs-5">
+                    <p>${item.footContent}</p>
+                </div>
+            </div>
+            `
+            ).join('');
+            applyArea.innerHTML = template;
+        })
+    }
+    renderApply();
+</script>

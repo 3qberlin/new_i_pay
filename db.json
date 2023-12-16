@@ -120,5 +120,26 @@
     "gender":"female",
     "genderBgColor":"bg-main"
   }
+],
+"apply":[
+  {
+  "title":"資格",
+  "bodyContent":"無經驗可",
+  "footContent":"新手小白都接受",
+  "imgUrl":"https://hackmd.io/_uploads/SkQoN9cLT.png"
+},
+{
+  "title":"抽成",
+  "bodyContent":"筆筆90%",
+  "footContent":"業界最高回饋",
+  "imgUrl":"https://hackmd.io/_uploads/HkliEc5Ia.png"
+},
+{
+  "title":"優勢",
+  "bodyContent":"彈性接案無負擔",
+  "footContent":"分享興趣與互動",
+  "imgUrl":"https://hackmd.io/_uploads/H1xiN5qLT.png"
+}
+
 ]
 }

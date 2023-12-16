@@ -18,7 +18,6 @@
     function getComments() {
         axios.get(`${localUrl}${comments}`).then((res) => {
             let data = res.data;
-            console.log('data', data);
             let template = data.map(item => `
         <div class="swiper-slide">
                 <div class="card h-100" style="z-index:0 !important;">
