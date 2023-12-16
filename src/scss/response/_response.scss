@@ -8,10 +8,10 @@ main ul li {
 }
 
 .comment {
-    margin-top: 1700px !important;
+    margin-top: 1860px !important;
 
     @include media-breakpoint-down(lg) {
-        margin-top: 0px !important;
+        margin-top: 48px !important;
     }
 }
 
